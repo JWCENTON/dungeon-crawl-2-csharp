@@ -1,6 +1,6 @@
 ﻿namespace Dungeon
 {
-    internal class Equipment
+    public class Equipment
     {
     }
 }

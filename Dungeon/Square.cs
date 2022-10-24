@@ -4,7 +4,7 @@ namespace Dungeon
 {
     public class Square
     {
-        private Status Status { get; }
+        public Status Status { get; }
         public string GetStatus { get; }
 
         public Square(Status status)
