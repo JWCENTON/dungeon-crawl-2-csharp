@@ -1,6 +1,6 @@
 ﻿namespace Dungeon
 {
-    internal class GroundFloor
+    public class GroundFloor
     {
     }
 }

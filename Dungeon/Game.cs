@@ -6,8 +6,9 @@ namespace Dungeon
     {
         public void Play()
         {
-            Map map = new Map();
-            Display.Floor();
+            Map floorMap = new TopFloor();
+            Player player = new Player();
+            Display.Map(floorMap, player);
         }
     }
 }
