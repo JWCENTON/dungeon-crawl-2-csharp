@@ -1,6 +1,11 @@
 ﻿namespace Dungeon.Enum
 {
-    internal class Direction
+    internal enum Direction
     {
+        Up,
+        Down,
+        Right,
+        Left,
+        Inventory
     }
 }
