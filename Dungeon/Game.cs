@@ -10,8 +10,6 @@ namespace Dungeon
             Player player = new Player();
             Display.Map(topFloor, player);
             Display.Map(groundFloor, player);
-            Display.MapName(topFloor);
-            Display.MapName(groundFloor);
         }
     }
 }
