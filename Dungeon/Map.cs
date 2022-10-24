@@ -1,4 +1,6 @@
-﻿namespace Dungeon
+﻿using Dungeon.Enum;
+
+namespace Dungeon
 {
     public class Map
     {
@@ -18,7 +20,7 @@
             {
                 for (var j = 0; j < Width; j++)
                 {
-                    FullMap[i, j] = new Square(Square.SquareStatus.Empty);
+                    FullMap[i, j] = new Square(Status.Empty);
                 }
             }
         }

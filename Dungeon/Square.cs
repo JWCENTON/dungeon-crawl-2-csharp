@@ -1,32 +1,37 @@
-﻿namespace Dungeon
+﻿using Dungeon.Enum;
+
+namespace Dungeon
 {
     public class Square
     {
-        private SquareStatus Status { get; set; }
-        public string SqStatus { get; set; }
+        private Status Status { get; }
+        public string GetStatus { get; }
 
-        public Square(SquareStatus status)
+        public Square(Status status)
         {
             Status = status;
-            SqStatus = GetCharacterSquareStatus(status);
+            GetStatus = GetSquareStatus(status);
         }
 
-        public enum SquareStatus
+        public string GetSquareStatus(Status status) //         Player,Empty,Tree,UpperWall,LowerWall
         {
-            Player, Empty, Tree
-        }
-
-        public string GetCharacterSquareStatus(SquareStatus status)
-        {
-            if (status == SquareStatus.Player)
+            if (status == Status.Player)
             {
                 return "P";
             }
-            else if (status == SquareStatus.Tree)
+            else if (status == Status.Tree)
             {
                 return "T";
             }
-            else 
+            else if (status == Status.UpperWall)
+            {
+                return "-";
+            }
+            else if (status == Status.LowerWall)
+            {
+                return "T";
+            }
+            else
             {
                 return ".";
             }

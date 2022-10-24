@@ -2,16 +2,16 @@
 {
     public class Display
     {
-        public void DisplayFoor()
+        public static void Floor()
         {
-            Console.WriteLine();
-            for (int i = 0; i < Map.Width; i++)
+            Console.WriteLine("hello");
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine("\n");
-                for (int j = 0; j < Map.Width; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     Console.Write(" ");
-                    Console.Write($"\t{Map.FullMap[i, j].SqStatus} ");
+                    Console.Write($"\t{Map.FullMap[i, j].GetStatus} ");
                 }
             }
             Console.WriteLine("\n");

@@ -34,11 +34,11 @@ namespace Dungeon
                             direction = Direction.Inventory;
                             Console.WriteLine("Open equipment");
                             break;
-                        default:
-                            if (direction == Direction.Inventory)
-                            {
+                        //default:
+                        //    if (direction == Direction.Inventory)
+                        //    {
 
-                            }
+                        //    }
                     }
                 }
             }
