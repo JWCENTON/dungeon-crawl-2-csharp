@@ -2,12 +2,12 @@
 {
     public class Map
     {
-        public Square[,] FullMap;
-        public int Width { get; }
+        public static Square[,] FullMap;
+        public static int Width { get; private set; }
 
         public Map()
         {
-            Width = 11;
+            Width = 100;
             FullMap = new Square[Width, Width];
             CreateMap();
         }
