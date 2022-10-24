@@ -4,9 +4,11 @@ namespace Dungeon
 {
     public class TopFloor : Map
     {
-        public TopFloor() : base()
-        {
+        public override string Name { get; }
 
+        public TopFloor()
+        {
+            Name = "top";
             CreateMap();
         }
 

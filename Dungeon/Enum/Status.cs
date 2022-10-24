@@ -5,7 +5,7 @@
         Player,
         Empty,
         Tree,
-        UpperWall,
-        LowerWall
+        UpDownWall,
+        SideWall
     }
 }

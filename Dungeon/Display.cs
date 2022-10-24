@@ -7,6 +7,7 @@ namespace Dungeon
         public static void Map(Map map, Player player)
         {
             map.FullMap[player.position.x, player.position.y] = new Square(Status.Player);
+            Console.WriteLine($"{map.Name}");
             Console.WriteLine();
             for (int i = player.position.x - 5 ; i <= (player.position.x + 5); i++)
             {

@@ -4,16 +4,14 @@ namespace Dungeon
 {
     public class Square
     {
-        public Status Status { get; }
         public string GetStatus { get; }
 
         public Square(Status status)
         {
-            Status = status;
             GetStatus = GetSquareStatus(status);
         }
 
-        public string GetSquareStatus(Status status) //         Player,Empty,Tree,UpperWall,LowerWall
+        private string GetSquareStatus(Status status)
         {
             if (status == Status.Player)
             {
@@ -23,13 +21,13 @@ namespace Dungeon
             {
                 return "T";
             }
-            else if (status == Status.UpperWall)
+            else if (status == Status.UpDownWall)
             {
                 return "-";
             }
-            else if (status == Status.LowerWall)
+            else if (status == Status.SideWall)
             {
-                return "T";
+                return "|";
             }
             else
             {

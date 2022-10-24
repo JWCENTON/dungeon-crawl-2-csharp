@@ -1,14 +1,14 @@
-﻿using Dungeon.Enum;
-
-namespace Dungeon
+﻿namespace Dungeon
 {
     public abstract class Map
     {
-        public Square[,] FullMap;
-        public static int Width { get; private set; }
+        public virtual string Name { get; }
+        public readonly Square[,] FullMap;
+        protected static int Width { get; private set; }
 
         public Map()
         {
+            Name = "map";
             Width = 100;
             FullMap = new Square[Width, Width];
         }
