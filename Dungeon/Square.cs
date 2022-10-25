@@ -35,7 +35,7 @@ namespace Dungeon
             }
             else if (status == Status.OutsideGroundFloor)
             {
-                return "'";
+                return "\u25A0"; // ■
             }
             else
             {
