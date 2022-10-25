@@ -1,7 +1,8 @@
 ﻿namespace Dungeon
 {
-    public class Monster : Character
+    public abstract class Monster : Character
     {
+        public virtual string typeAtact { get; set; }
 
     }
 }

@@ -4,7 +4,7 @@ namespace Dungeon
 {
     public class CharacterManager
     {
-        internal void MakeMove(Player character)
+        internal void GetPlayerMove(Character character)
         {
             bool endOfMovement = false;
             while (!endOfMovement)
@@ -44,18 +44,16 @@ namespace Dungeon
                     {
                         ChangePosition(character, direction);
                         endOfMovement = true;
-                        direction = Direction.DontMove;
                     }
                     else if (direction == Direction.Inventory)
                     {
                         endOfMovement = true;
-                        direction = Direction.DontMove;
                     }
                 }
             }
         }
 
-        public void ChangePosition(Player character, Direction direction)
+        public void ChangePosition(Character character, Direction direction)
         {
             switch (direction)
             {

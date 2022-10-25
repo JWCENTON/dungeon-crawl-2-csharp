@@ -5,7 +5,7 @@ namespace Dungeon
 {
     public class Display
     {
-        public static void Map(Map map, Player player)
+        public static void Map(Map map, Character player)
         {
             map.FullMap[player.Position.x, player.Position.y] = new Square(Status.Player);
             MapName(map);
@@ -29,7 +29,7 @@ namespace Dungeon
             Console.WriteLine($"\t{map.Name}");
         }
 
-        public static void PLayerPosition(Player player)
+        public static void PLayerPosition(Character player)
         {
             Console.WriteLine($"Player ({player.Position.x}, {player.Position.y})");
         }

@@ -7,17 +7,16 @@ namespace Dungeon
         {
             Map topFloor = new TopFloor();
             Map groundFloor = new GroundFloor();
-            Player player = new Player();
+            Character player = new Player();
             CharacterManager manager = new CharacterManager();
 
             while (true)
             {
                 Display.Map(groundFloor, player);
                 Display.PLayerPosition(player);
-                manager.MakeMove(player);
+                manager.GetPlayerMove(player);
                 Console.WriteLine("\n\n");
             }
-            
         }
     }
 }
