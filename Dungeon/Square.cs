@@ -29,9 +29,13 @@ namespace Dungeon
             {
                 return "||";
             }
-            else if (status == Status.Outside)
+            else if (status == Status.OutsideTopFloor)
             {
                 return "^";
+            }
+            else if (status == Status.OutsideGroundFloor)
+            {
+                return "'";
             }
             else
             {

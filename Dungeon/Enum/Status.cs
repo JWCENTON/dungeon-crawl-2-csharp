@@ -7,6 +7,7 @@
         Tree,
         UpDownWall,
         SideWall,
-        Outside
+        OutsideTopFloor,
+        OutsideGroundFloor,
     }
 }

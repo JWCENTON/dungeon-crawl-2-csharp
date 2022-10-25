@@ -10,7 +10,7 @@
 
         public Player()
         {
-            Position = (10, 20); // Players corner positions: Left top 10, 20 | left bottom 379, 20 | right top 10, 379 | right bottom 379, 379
+            Position = (10, 20);
         }
 
     }

@@ -31,7 +31,7 @@ namespace Dungeon
                     else if ((i >= 0 && i < 10) || (i > Width - 20 && i <= Width) ||
                              (j >= 0 && j < 20) || (j > Width - 20 && j <= Width))
                     {
-                        FullMap[i, j] = new Square(Status.Outside);
+                        FullMap[i, j] = new Square(Status.OutsideTopFloor);
                     }
                     else
                     {
