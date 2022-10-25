@@ -6,6 +6,7 @@
         Empty,
         Tree,
         UpDownWall,
-        SideWall
+        SideWall,
+        Outside
     }
 }

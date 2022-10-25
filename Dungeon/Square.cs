@@ -23,15 +23,19 @@ namespace Dungeon
             }
             else if (status == Status.UpDownWall)
             {
-                return "-";
+                return "=";
             }
             else if (status == Status.SideWall)
             {
-                return "|";
+                return "||";
+            }
+            else if (status == Status.Outside)
+            {
+                return "^";
             }
             else
             {
-                return ".";
+                return " ";
             }
         }
     }
