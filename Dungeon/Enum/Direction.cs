@@ -6,6 +6,7 @@
         Down,
         Right,
         Left,
-        Inventory
+        Inventory,
+        DontMove
     }
 }

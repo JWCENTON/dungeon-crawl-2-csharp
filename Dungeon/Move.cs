@@ -35,10 +35,13 @@ namespace Dungeon
                             Console.WriteLine("Open equipment");
                             break;
                         default:
-                            if (direction == Direction.Inventory)
-                            {
+                            direction = Direction.DontMove;
+                            break;
+                    }
 
-                            }
+                    if (!(direction == Direction.DontMove))
+                    {
+
                     }
                 }
             }
