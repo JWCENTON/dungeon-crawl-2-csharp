@@ -12,9 +12,10 @@ namespace Dungeon
 
             while (true)
             {
-                Display.Map(groundFloor, player);
+                Display.Map(topFloor, player);
                 Display.PLayerPosition(player);
-                manager.GetPlayerMove(player);
+                manager.MakeMove(player);
+                Console.Clear();
                 Console.WriteLine("\n\n");
             }
         }
