@@ -19,7 +19,7 @@ namespace Dungeon
             }
             else if (status == Status.Tree)
             {
-                return "T";
+                return "|";
             }
             else if (status == Status.UpDownWall)
             {
@@ -39,7 +39,7 @@ namespace Dungeon
             }
             else if (status == Status.Start)
             {
-                return "||";
+                return ">";
             }
             else
             {

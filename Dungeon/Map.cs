@@ -9,7 +9,7 @@
         public Map()
         {
             Name = "map";
-            Width = 50;
+            Width = 100;
             FullMap = new Square[Width, Width];
         }
     }

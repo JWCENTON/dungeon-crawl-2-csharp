@@ -12,6 +12,30 @@ namespace Dungeon
             CreateMap();
         }
 
+        private void StartName()
+        {
+            FullMap[10, 20] = new Square(Status.Start);
+        }
+
+        private void Tree()
+        {
+            FullMap[18, 30] = new Square(Status.Tree);
+            FullMap[18, 31] = new Square(Status.Tree);
+            FullMap[17, 30] = new Square(Status.Tree);
+            FullMap[17, 31] = new Square(Status.Tree);
+            FullMap[16, 30] = new Square(Status.Tree);
+            FullMap[16, 31] = new Square(Status.Tree);
+            FullMap[15, 29] = new Square(Status.UpDownWall);
+            FullMap[15, 30] = new Square(Status.UpDownWall);
+            FullMap[15, 31] = new Square(Status.UpDownWall);
+            FullMap[15, 32] = new Square(Status.UpDownWall);
+            FullMap[14, 29] = new Square(Status.UpDownWall);
+            FullMap[14, 30] = new Square(Status.UpDownWall);
+            FullMap[14, 31] = new Square(Status.UpDownWall);
+            FullMap[14, 32] = new Square(Status.UpDownWall);
+            FullMap[13, 30] = new Square(Status.UpDownWall);
+            FullMap[13, 31] = new Square(Status.UpDownWall);
+        }
         public void CreateMap()
         {
             for (var i = 0; i < Width; i++)
@@ -39,11 +63,7 @@ namespace Dungeon
                 }
             }
             StartName();
-        }
-
-        private void StartName()
-        {
-            FullMap[10, 20] = new Square(Status.Start);
+            Tree();
         }
     }
 }
