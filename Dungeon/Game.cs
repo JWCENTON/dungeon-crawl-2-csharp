@@ -1,6 +1,16 @@
-﻿namespace Dungeon
+﻿
+namespace Dungeon
 {
-    internal class Game
+    public class Game
     {
+        public void Play()
+        {
+            Map topFloor = new TopFloor();
+            Map groundFloor = new GroundFloor();
+            Player player = new Player();
+            Display.Map(topFloor, player);
+            Display.Map(groundFloor, player);
+            Display.PLayerPosition(player);
+        }
     }
 }

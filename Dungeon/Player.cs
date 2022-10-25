@@ -1,12 +1,18 @@
 ﻿namespace Dungeon
 {
+    public class Player
     internal class Player : Character
     {
-        public (int, int) position { get; set; }
+        public (int y, int x) Position { get; set; }
         public string name { get; set; }
         public int health { get; set; }
         public int atack { get; set; }
         public Equipment equipment { get; set; }
+
+        public Player()
+        {
+            Position = (21, 11);
+        }
 
     }
 }

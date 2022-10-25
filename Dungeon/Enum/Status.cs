@@ -1,6 +1,14 @@
 ﻿namespace Dungeon.Enum
 {
-    internal class Status
+    public enum Status
     {
+        Player,
+        Empty,
+        Tree,
+        UpDownWall,
+        SideWall,
+        OutsideTopFloor,
+        OutsideGroundFloor,
+        Start
     }
 }
