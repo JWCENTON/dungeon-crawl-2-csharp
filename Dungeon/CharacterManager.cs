@@ -60,16 +60,16 @@ namespace Dungeon
             switch (direction)
             {
                 case Direction.Up:
-                    character.Position = (character.Position.y - 1, character.Position.x);
-                    break;
-                case Direction.Down:
-                    character.Position = (character.Position.y + 1, character.Position.x);
-                    break;
-                case Direction.Left:
                     character.Position = (character.Position.y, character.Position.x - 1);
                     break;
-                case Direction.Right:
+                case Direction.Down:
                     character.Position = (character.Position.y, character.Position.x + 1);
+                    break;
+                case Direction.Left:
+                    character.Position = (character.Position.y - 1, character.Position.x);
+                    break;
+                case Direction.Right:
+                    character.Position = (character.Position.y + 1, character.Position.x);
                     break;
             }
         }
