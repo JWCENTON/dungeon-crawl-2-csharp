@@ -14,7 +14,6 @@ namespace Dungeon
 
         public void CreateMap()
         {
-            int counter = 0;
             for (var i = 0; i < Width; i++)
             {
                 for (var j = 0; j < Width; j++)
@@ -28,8 +27,8 @@ namespace Dungeon
                     {
                         FullMap[i, j] = new Square(Status.SideWall);
                     }
-                    else if ((i >= 0 && i < 10) || (i > Width - 20 && i <= Width) ||
-                             (j >= 0 && j < 20) || (j > Width - 20 && j <= Width))
+                    else if ((i >= 0 && i < 9) || (i > Width - 20 && i <= Width) ||
+                             (j >= 0 && j < 19) || (j > Width - 20 && j <= Width))
                     {
                         FullMap[i, j] = new Square(Status.OutsideTopFloor);
                     }

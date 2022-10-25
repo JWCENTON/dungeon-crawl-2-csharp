@@ -4,7 +4,7 @@ namespace Dungeon
 {
     public class CharacterManager
     {
-        internal void GetPlayerMove(Character character)
+        internal void GetPlayerMove(Character character, Map map)
         {
             bool endOfMovement = false;
             while (!endOfMovement)
@@ -42,7 +42,7 @@ namespace Dungeon
 
                     if (direction != Direction.DontMove && direction != Direction.Inventory)
                     {
-                        ChangePosition(character, direction);
+                        ChangePosition(character, direction, map);
                         endOfMovement = true;
                     }
                     else if (direction == Direction.Inventory)
@@ -53,21 +53,38 @@ namespace Dungeon
             }
         }
 
-        public void ChangePosition(Character character, Direction direction)
+        public void ChangePosition(Character character, Direction direction, Map map)
         {
+            Verification verify = new Verification();
             switch (direction)
             {
                 case Direction.Up:
-                    character.Position = (character.Position.y, character.Position.x - 1);
+                    if (verify.DirectionUpIsWall(map, character))
+                    {
+                        break;
+                    }
+                    character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Down:
-                    character.Position = (character.Position.y, character.Position.x + 1);
+                    if (verify.DirectionDownIsWall(map, character))
+                    {
+                        break;
+                    }
+                    character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Left:
-                    character.Position = (character.Position.y - 1, character.Position.x);
+                    if (verify.DirectionLeftIsWall(map, character))
+                    {
+                        break;
+                    }
+                    character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Right:
-                    character.Position = (character.Position.y + 1, character.Position.x);
+                    if (verify.DirectionRightIsWall(map, character))
+                    {
+                        break;
+                    }
+                    character.Position = (character.Position.y, character.Position.x);
                     break;
             }
         }

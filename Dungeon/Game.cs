@@ -14,8 +14,8 @@ namespace Dungeon
             {
                 Display.Map(topFloor, player);
                 Display.PLayerPosition(player);
-                manager.GetPlayerMove(player);
-                Console.Clear();
+                manager.GetPlayerMove(player, topFloor);
+                //Console.Clear();
                 Console.WriteLine("\n\n");
             }
         }

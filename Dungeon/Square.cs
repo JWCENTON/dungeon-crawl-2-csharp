@@ -39,7 +39,7 @@ namespace Dungeon
             }
             else if (status == Status.Start)
             {
-                return "START";
+                return "||";
             }
             else
             {
