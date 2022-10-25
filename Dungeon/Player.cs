@@ -1,6 +1,6 @@
 ﻿namespace Dungeon
 {
-    internal class Player
+    internal class Player : Character
     {
         public (int, int) position { get; set; }
         public string name { get; set; }
