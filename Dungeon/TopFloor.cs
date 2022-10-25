@@ -8,7 +8,7 @@ namespace Dungeon
 
         public TopFloor()
         {
-            Name = "top";
+            Name = "Top floor";
             CreateMap();
         }
 
@@ -39,7 +39,6 @@ namespace Dungeon
                     }
                 }
             }
-            //FullMap[100, 100] = new Square(Status.Tree);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Dungeon
 
         public static void MapName(Map map)
         {
-            Console.WriteLine($"\tYou are in {map.Name} level");
+            Console.WriteLine($"\t{map.Name}");
         }
 
         public static void PLayerPosition(Player player)
