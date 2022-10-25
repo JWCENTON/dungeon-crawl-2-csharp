@@ -9,5 +9,6 @@
         SideWall,
         OutsideTopFloor,
         OutsideGroundFloor,
+        Start
     }
 }

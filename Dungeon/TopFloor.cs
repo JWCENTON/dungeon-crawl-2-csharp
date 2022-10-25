@@ -39,6 +39,12 @@ namespace Dungeon
                     }
                 }
             }
+            StartIcon();
+        }
+
+        private void StartIcon()
+        {
+            FullMap[10, 20] = new Square(Status.Start);
         }
     }
 }

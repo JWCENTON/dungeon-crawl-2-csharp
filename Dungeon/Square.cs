@@ -35,7 +35,11 @@ namespace Dungeon
             }
             else if (status == Status.OutsideGroundFloor)
             {
-                return "\u25A0"; // ■
+                return "\u2580"; // ■
+            }
+            else if (status == Status.Start)
+            {
+                return "START";
             }
             else
             {

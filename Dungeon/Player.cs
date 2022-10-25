@@ -10,7 +10,7 @@
 
         public Player()
         {
-            Position = (10, 20);
+            Position = (11, 20);
         }
 
     }
