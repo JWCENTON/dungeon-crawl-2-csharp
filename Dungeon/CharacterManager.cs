@@ -4,9 +4,10 @@ namespace Dungeon
 {
     public class CharacterManager
     {
-        internal void MakeMove(Character character)
+        internal void MakeMove(Player character)
         {
-            while (true)
+            bool endOfMovement = false;
+            while (!endOfMovement)
             {
                 if (Console.KeyAvailable)
                 {
@@ -42,30 +43,33 @@ namespace Dungeon
                     if (direction != Direction.DontMove && direction != Direction.Inventory)
                     {
                         ChangePosition(character, direction);
+                        endOfMovement = true;
+                        direction = Direction.DontMove;
                     }
                     else if (direction == Direction.Inventory)
                     {
-
+                        endOfMovement = true;
+                        direction = Direction.DontMove;
                     }
                 }
             }
         }
 
-        public void ChangePosition(Character character, Direction direction)
+        public void ChangePosition(Player character, Direction direction)
         {
             switch (direction)
             {
                 case Direction.Up:
-                    character.position = (character.position.y - 1, character.position.x);
+                    character.Position = (character.Position.y - 1, character.Position.x);
                     break;
                 case Direction.Down:
-                    character.position = (character.position.y + 1, character.position.x);
+                    character.Position = (character.Position.y + 1, character.Position.x);
                     break;
                 case Direction.Left:
-                    character.position = (character.position.y, character.position.x - 1);
+                    character.Position = (character.Position.y, character.Position.x - 1);
                     break;
                 case Direction.Right:
-                    character.position = (character.position.y, character.position.x + 1);
+                    character.Position = (character.Position.y, character.Position.x + 1);
                     break;
             }
         }

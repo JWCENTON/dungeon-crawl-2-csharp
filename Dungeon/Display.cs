@@ -1,4 +1,5 @@
-﻿using Dungeon.Enum;
+﻿using System.Net.NetworkInformation;
+using Dungeon.Enum;
 
 namespace Dungeon
 {
@@ -15,7 +16,7 @@ namespace Dungeon
                 for (int j = player.Position.y - 20; j <= (player.Position.y + 20); j++)
                 {
                     Console.Write(" ");
-                    Console.Write($"{map.FullMap[i, j].GetStatus} ");
+                    Console.Write($"{map.FullMap[i, j].GetStatus}");
                 }
             }
             Console.WriteLine("\n");
@@ -26,9 +27,10 @@ namespace Dungeon
             Console.WriteLine($"\t{map.Name}");
         }
 
-        public static void PLayerPosition(Player player)
+        public static void PLayerPosition(Character player)
         {
             Console.WriteLine($"Player ({player.Position.x}, {player.Position.y})");
         }
+
     }
 }

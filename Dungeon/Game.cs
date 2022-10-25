@@ -8,9 +8,16 @@ namespace Dungeon
             Map topFloor = new TopFloor();
             Map groundFloor = new GroundFloor();
             Player player = new Player();
-            Display.Map(topFloor, player);
-            Display.Map(groundFloor, player);
-            Display.PLayerPosition(player);
+            CharacterManager manager = new CharacterManager();
+
+            while (true)
+            {
+                Display.Map(groundFloor, player);
+                Display.PLayerPosition(player);
+                manager.MakeMove(player);
+                Console.WriteLine("\n\n");
+            }
+            
         }
     }
 }
