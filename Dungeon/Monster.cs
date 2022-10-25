@@ -1,6 +1,6 @@
 ﻿namespace Dungeon
 {
-    internal class Monster : Character
+    public class Monster : Character
     {
     }
 }

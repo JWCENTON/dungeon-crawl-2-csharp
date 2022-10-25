@@ -2,7 +2,7 @@
 
 namespace Dungeon
 {
-    internal class CharacterManager
+    public class CharacterManager
     {
         internal void MakeMove(Character character)
         {

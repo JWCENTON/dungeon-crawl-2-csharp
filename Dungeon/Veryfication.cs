@@ -1,6 +1,6 @@
 ﻿namespace Dungeon
 {
-    internal class Veryfication
+    public class Veryfication
     {
     }
 }

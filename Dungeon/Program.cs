@@ -1,6 +1,6 @@
 ﻿namespace Dungeon
 {
-    internal class Program
+    public class Program
     {
 
         static public void Main(String[] args)
