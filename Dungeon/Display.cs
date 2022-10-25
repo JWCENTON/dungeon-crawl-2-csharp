@@ -19,6 +19,8 @@ namespace Dungeon
                     Console.Write($"{map.FullMap[i, j].GetStatus}");
                 }
             }
+            map.FullMap[player.Position.x, player.Position.y] = new Square(Status.Empty);
+
             Console.WriteLine("\n");
         }
 
@@ -27,7 +29,7 @@ namespace Dungeon
             Console.WriteLine($"\t{map.Name}");
         }
 
-        public static void PLayerPosition(Character player)
+        public static void PLayerPosition(Player player)
         {
             Console.WriteLine($"Player ({player.Position.x}, {player.Position.y})");
         }
