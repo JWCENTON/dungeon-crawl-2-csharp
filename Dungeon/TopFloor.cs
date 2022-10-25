@@ -39,10 +39,10 @@ namespace Dungeon
                     }
                 }
             }
-            StartIcon();
+            StartName();
         }
 
-        private void StartIcon()
+        private void StartName()
         {
             FullMap[10, 20] = new Square(Status.Start);
         }

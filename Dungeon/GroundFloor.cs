@@ -38,6 +38,7 @@ namespace Dungeon
                     }
                 }
             }
+            FullMap[13, 23] = new Square(Status.Tree);
         }
     }
 }
