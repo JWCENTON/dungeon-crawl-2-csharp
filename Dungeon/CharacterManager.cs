@@ -89,9 +89,14 @@ namespace Dungeon
         public void ChangePosition(Character character, Direction direction, Map map)
         {
             Verification verify = new Verification();
+            var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             switch (direction)
             {
                 case Direction.Up:
+                    if (upDirectionStatus == "K")
+                    {
+                        character.Equipment.Add("K");
+                    }
                     if (verify.DirectionUpIsWallOrChangeLevel(map, character))
                     {
                         break;

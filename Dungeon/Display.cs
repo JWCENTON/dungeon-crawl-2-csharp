@@ -43,5 +43,10 @@ namespace Dungeon
             Console.Write($"{space}{player.Name}: Health {lifeBar} (X: {player.Position.x}, Y: {player.Position.y})");
         }
 
+        public static void PlayerLevel(Character player)
+        {
+            Console.WriteLine($"{player.Level}");
+        }
+
     }
 }

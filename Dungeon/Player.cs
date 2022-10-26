@@ -11,6 +11,15 @@ namespace Dungeon
             Health = 100;
             Type = Status.Player;
             Level = "Top floor";
+            Equipment = new List<string>();
+        }
+
+        public void CollectKey(string direction)
+        {
+            if (direction != "K")
+            {
+                Equipment.Add("K");
+            }
         }
     }
 }

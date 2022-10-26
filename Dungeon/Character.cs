@@ -9,8 +9,9 @@ namespace Dungeon
         public Status Type { get; set; }
         public string? Level { get; set; }
         public virtual int Health { get; set; }
+        public virtual List<string> Equipment { get; set; }
+
         public virtual int AtackValue { get; set; }
-        public virtual Equipment Equipment { get; set; }
         public virtual bool IsAlive { get; set; }
     }
 }
