@@ -11,12 +11,19 @@ namespace Dungeon.Maps
     {
         public void CreateTree(Square[,] map)
         {
-            map[18, 30] = new Square(Status.Tree);
-            map[18, 31] = new Square(Status.Tree);
-            map[17, 30] = new Square(Status.Tree);
-            map[17, 31] = new Square(Status.Tree);
-            map[16, 30] = new Square(Status.Tree);
-            map[16, 31] = new Square(Status.Tree);
+            for (var i = 16; i <= 18; i++)
+            {
+                for (var j = 30; j <= 31; j++)
+                {
+                    map[i, j] = new Square(Status.Tree);
+                }
+            }
+            //map[18, 30] = new Square(Status.Tree);
+            //map[18, 31] = new Square(Status.Tree);
+            //map[17, 30] = new Square(Status.Tree);
+            //map[17, 31] = new Square(Status.Tree);
+            //map[16, 30] = new Square(Status.Tree);
+            //map[16, 31] = new Square(Status.Tree);
             map[15, 29] = new Square(Status.UpDownWall);
             map[15, 30] = new Square(Status.UpDownWall);
             map[15, 31] = new Square(Status.UpDownWall);
