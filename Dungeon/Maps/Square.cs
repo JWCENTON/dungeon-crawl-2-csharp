@@ -53,6 +53,14 @@ namespace Dungeon.Maps
             {
                 return "3";
             }
+            else if (status == Status.CaveLeftWall)
+            {
+                return "\\";
+            }
+            else if (status == Status.CaveRightWall)
+            {
+                return "/";
+            }
             else
             {
                 return " ";

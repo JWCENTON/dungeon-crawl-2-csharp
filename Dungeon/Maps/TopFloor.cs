@@ -68,6 +68,8 @@ namespace Dungeon.Maps
             }
             PlaceStartIcon();
             PlaceForest();
+            FullMap[25, 35] = new Square(Status.CaveLeftWall);
+            FullMap[24, 34] = new Square(Status.CaveRightWall);
         }
     }
 }

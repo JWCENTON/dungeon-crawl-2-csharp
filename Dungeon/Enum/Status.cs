@@ -12,6 +12,8 @@
         Start,
         Monster1,
         Monster2,
-        Monster3
+        Monster3,
+        CaveLeftWall,
+        CaveRightWall
     }
 }
