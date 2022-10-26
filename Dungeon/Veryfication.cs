@@ -24,7 +24,7 @@ namespace Dungeon
             if (directionStatus != _walls[5]) return;
             character.Level = character.Level == "Top floor" ? "Ground floor" : "Top floor";
         }
-        public bool DirectionUpIsWall(Map map, Character character)
+        public bool DirectionUpIsWallOrChangeLevel(Map map, Character character)
         {
             var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             var moveUp = (character.Position.y, character.Position.x - 1);
@@ -34,7 +34,7 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionDownIsWall(Map map, Character character)
+        public bool DirectionDownIsWallOrChangeLevel(Map map, Character character)
         {
             var downDirectionStatus = map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
             var moveDown = (character.Position.y, character.Position.x + 1);
@@ -44,7 +44,7 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionLeftIsWall(Map map, Character character)
+        public bool DirectionLeftIsWallOrChangeLevel(Map map, Character character)
         {
             var leftDirectionStatus = map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
             var moveLeft = (character.Position.y - 1, character.Position.x);
@@ -54,7 +54,7 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionRightIsWall(Map map, Character character)
+        public bool DirectionRightIsWallOrChangeLevel(Map map, Character character)
         {
             var rightDirectionStatus = map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
             var moveRight = (character.Position.y + 1, character.Position.x);

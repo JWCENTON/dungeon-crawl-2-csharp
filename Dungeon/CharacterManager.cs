@@ -92,28 +92,28 @@ namespace Dungeon
             switch (direction)
             {
                 case Direction.Up:
-                    if (verify.DirectionUpIsWall(map, character))
+                    if (verify.DirectionUpIsWallOrChangeLevel(map, character))
                     {
                         break;
                     }
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Down:
-                    if (verify.DirectionDownIsWall(map, character))
+                    if (verify.DirectionDownIsWallOrChangeLevel(map, character))
                     {
                         break;
                     }
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Left:
-                    if (verify.DirectionLeftIsWall(map, character))
+                    if (verify.DirectionLeftIsWallOrChangeLevel(map, character))
                     {
                         break;
                     }
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Right:
-                    if (verify.DirectionRightIsWall(map, character))
+                    if (verify.DirectionRightIsWallOrChangeLevel(map, character))
                     {
                         break;
                     }

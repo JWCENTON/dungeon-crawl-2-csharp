@@ -65,6 +65,10 @@ namespace Dungeon.Maps
             {
                 return "#";
             }
+            else if (status == Status.Key)
+            {
+                return "K";
+            }
             else
             {
                 return " ";

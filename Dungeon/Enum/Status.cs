@@ -15,6 +15,7 @@
         Monster3,
         CaveLeftWall,
         CaveRightWall,
-        Entrance
+        Entrance,
+        Key
     }
 }

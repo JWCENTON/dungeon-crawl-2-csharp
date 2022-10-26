@@ -77,6 +77,7 @@ namespace Dungeon.Maps
             PlaceStartIcon();
             PlaceForest();
             PlaceCave();
+            FullMap[50, 50] = new Square(Status.Key);
         }
     }
 }
