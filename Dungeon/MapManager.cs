@@ -1,18 +1,41 @@
 ﻿using Dungeon.Enum;
 using Dungeon.Maps;
+using Dungeon.Monsters;
 
 namespace Dungeon
 {
     internal class MapManager
     {
-        public static void PutObjectOnMap(Map map, Character character)
+        public static void PutObjectOnMap(Map map, (int y,int x) coordinates, Status typeStatus)
         {
-            map.FullMap[character.Position.x, character.Position.y] = new Square(Status.Player);
+            int x = coordinates.x;
+            int y = coordinates.y;
+
+            map.FullMap[x, y] = new Square(typeStatus);
         }
 
-        public static void TakeOffObjectFromMap(Map map, Character character)
+        public static void RemoveObjectFromMap(Map map, (int y, int x) coordinates)
         {
-            map.FullMap[character.Position.x, character.Position.y] = new Square(Status.Empty);
+            int x = coordinates.x;
+            int y = coordinates.y;
+
+            map.FullMap[x, y] = new Square(Status.Empty);
+        }
+
+        public static void SetMonstersOnMap(Map map, List<Monster> Monsters)
+        {
+            foreach (var monster in Monsters)
+            {
+                PutObjectOnMap(map, monster.Position, monster.Type);
+            }
+        }
+
+        public static void RemoveMonstersFromMap(Map map, List<Monster> Monsters)
+        {
+            foreach (var monster in Monsters)
+            {
+                RemoveObjectFromMap(map, monster.Position);
+            }
         }
     }
 }

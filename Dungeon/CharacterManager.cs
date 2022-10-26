@@ -1,10 +1,12 @@
 ﻿using Dungeon.Enum;
 using Dungeon.Maps;
+using Dungeon.Monsters;
 
 namespace Dungeon
 {
     public class CharacterManager
     {
+        public List<Monster> Monsters = new();
         internal void GetPlayerMove(Character character, Map map)
         {
             bool endOfMovement = false;
@@ -18,23 +20,18 @@ namespace Dungeon
                     {
                         case ConsoleKey.UpArrow:
                             direction = Direction.Up;
-                            Console.WriteLine("Movement up");
                             break;
                         case ConsoleKey.DownArrow:
                             direction = Direction.Down;
-                            Console.WriteLine("Movement down");
                             break;
                         case ConsoleKey.LeftArrow:
                             direction = Direction.Left;
-                            Console.WriteLine("Movement left");
                             break;
                         case ConsoleKey.RightArrow:
                             direction = Direction.Right;
-                            Console.WriteLine("Movement right");
                             break;
                         case ConsoleKey.E:
                             direction = Direction.Inventory;
-                            Console.WriteLine("Open equipment");
                             break;
                         default:
                             direction = Direction.DontMove;
@@ -52,6 +49,41 @@ namespace Dungeon
                     }
                 }
             }
+        }
+
+        public void AddToListMonsters(Monster monster)
+        {
+            Monsters.Add(monster);
+        }
+
+        public Monster CreateMonster(Status typeOfMonster)
+        {
+            Monster monster = null;
+            switch (typeOfMonster)
+            {
+                case Status.Monster1:
+                    return new Wolf((29,32));
+            }
+            // TODO: throw error (not exist monster)
+
+            return monster;
+        }
+
+        public List<Monster> CreateListOfMonsters(int quantity)
+        {
+            List<Monster> monsters = new List<Monster>();
+            List<Status> monsterStatusList = new List<Status> {Status.Monster1}; //TODO: Add more monsters type
+            Random r = new Random();
+
+            for (int i = 0; i < quantity; i++)
+            {
+                int randomIndex = r.Next(monsterStatusList.Count);
+                Status monsterType = monsterStatusList[randomIndex];
+                // try catch (console write error) 
+                monsters.Add(CreateMonster(monsterType));
+            }
+
+            return monsters;
         }
 
         public void ChangePosition(Character character, Direction direction, Map map)
