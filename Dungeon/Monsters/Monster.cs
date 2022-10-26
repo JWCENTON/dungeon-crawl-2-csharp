@@ -2,12 +2,13 @@
 {
     public abstract class Monster
     {
-        public virtual (int y, int x) Position { get; set; }
-        public virtual string Name { get; }
-        public virtual int Health { get; set; }
-        public virtual int AtackValue { get; }
-        public virtual string TypeAtack { get; }
-        public virtual Item Item { get; set; }
+        public (int y, int x) Position { get; set; }
+        public string Name { get; }
+        public int Health { get; set; }
+        public int AtackValue { get; set; }
+        public string TypeAtack { get; set; }
+        public Item Item { get; set; }
+        public bool IsAlive { get; set; }
         public int SetMonsterIntValue(int minHealth, int maxHealth)
         {
             Random random = new Random();
