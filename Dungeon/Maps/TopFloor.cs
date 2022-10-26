@@ -11,16 +11,16 @@ namespace Dungeon.Maps
             Name = "Top floor";
             CreateMap();
         }
-        
         private void PlaceStartIcon()
         {
             FullMap[10, 20] = new Square(Status.Start);
         }
 
-        private void PlaceTree()
+        private void PlaceTree((int x, int y) startCoordinates)
         {
             Tree newTree = new Tree();
-            newTree.CreateTree(FullMap);
+            //var startCoordinate = (13, 30);
+            newTree.CreateTree(FullMap, startCoordinates);
         }
 
         private void CreateWallsAndEmptySpace(int i, int j)
@@ -54,7 +54,8 @@ namespace Dungeon.Maps
                 }
             }
             PlaceStartIcon();
-            PlaceTree();
+            PlaceTree((13, 30));
+            PlaceTree((13, 33));
         }
     }
 }
