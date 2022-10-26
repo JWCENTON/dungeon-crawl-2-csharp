@@ -8,17 +8,8 @@ namespace Dungeon
 
         private void CheckAndChangeLevel(string directionStatus, Character character)
         {
-            if (directionStatus == _walls[5])
-            {
-                if (character.Level == "Top floor")
-                {
-                    character.Level = "Ground floor";
-                }
-                else
-                {
-                    character.Level = "Top floor";
-                }
-            }
+            if (directionStatus != _walls[5]) return;
+            character.Level = character.Level == "Top floor" ? "Ground floor" : "Top floor";
         }
         public bool DirectionUpIsWall(Map map, Character character)
         {
