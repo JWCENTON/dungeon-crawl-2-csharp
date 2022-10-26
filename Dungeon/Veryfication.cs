@@ -1,4 +1,5 @@
 ﻿using System.Threading.Channels;
+using Dungeon.Maps;
 
 namespace Dungeon
 {
