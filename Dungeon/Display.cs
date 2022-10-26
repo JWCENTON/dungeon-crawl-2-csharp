@@ -1,5 +1,6 @@
 ﻿using System.Net.NetworkInformation;
 using Dungeon.Enum;
+using Dungeon.Maps;
 
 namespace Dungeon
 {

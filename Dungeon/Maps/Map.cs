@@ -1,4 +1,4 @@
-﻿namespace Dungeon
+﻿namespace Dungeon.Maps
 {
     public abstract class Map
     {

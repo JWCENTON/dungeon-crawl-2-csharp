@@ -1,6 +1,6 @@
 ﻿using Dungeon.Enum;
 
-namespace Dungeon
+namespace Dungeon.Maps
 {
     public class Square
     {

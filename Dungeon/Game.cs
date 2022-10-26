@@ -1,4 +1,6 @@
 ﻿
+using Dungeon.Maps;
+
 namespace Dungeon
 {
     public class Game
