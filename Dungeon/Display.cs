@@ -7,7 +7,7 @@ namespace Dungeon
     {
         public static void Map(Map map, Character player)
         {
-            map.FullMap[player.Position.x, player.Position.y] = new Square(Status.Player);
+            MapManager.PutObjectOnMap(map, player);
             MapName(map);
             Console.WriteLine();
             for (int i = player.Position.x - 10 ; i <= (player.Position.x + 10); i++)
@@ -19,7 +19,7 @@ namespace Dungeon
                     Console.Write($"{map.FullMap[i, j].GetStatus}");
                 }
             }
-            map.FullMap[player.Position.x, player.Position.y] = new Square(Status.Empty);
+            MapManager.TakeOffObjectFromMap(map, player);
 
             Console.WriteLine("\n");
         }
@@ -31,7 +31,8 @@ namespace Dungeon
 
         public static void PLayerPosition(Character player)
         {
-            Console.WriteLine($"Player ({player.Position.x}, {player.Position.y})");
+            string lifeBar = new string('+', (player.Health / 10));
+            Console.WriteLine($"{player.Name}: Health {lifeBar} (X: {player.Position.x}, Y: {player.Position.y})");
         }
 
     }
