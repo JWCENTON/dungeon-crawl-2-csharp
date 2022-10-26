@@ -5,6 +5,8 @@
         public Player()
         {
             Position = (21, 11);
+            Name = "Alice";
+            Health = 100;
         }
     }
 }
