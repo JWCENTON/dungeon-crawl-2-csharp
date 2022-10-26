@@ -1,17 +1,31 @@
-﻿using System.Threading.Channels;
+﻿using Dungeon.Enum;
 using Dungeon.Maps;
-using Dungeon.Enum;
 
 namespace Dungeon
 {
     public class Verification
     {
-        private readonly List<string> _walls = new List<string>{"=", "|", "||", "/", "\\", "#"};
+        private readonly List<string> _walls = new() { "=", "|", "||", "/", "\\", "#", "^" };
 
+        private void CheckAndChangeLevel(string directionStatus, Character character)
+        {
+            if (directionStatus == _walls[5])
+            {
+                if (character.Level == "Top floor")
+                {
+                    character.Level = "Ground floor";
+                }
+                else
+                {
+                    character.Level = "Top floor";
+                }
+            }
+        }
         public bool DirectionUpIsWall(Map map, Character character)
         {
             var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             var moveUp = (character.Position.y, character.Position.x - 1);
+            CheckAndChangeLevel(upDirectionStatus, character);
             foreach (var wall in _walls)
             {
                 if (upDirectionStatus == wall)
@@ -27,6 +41,7 @@ namespace Dungeon
         {
             var downDirectionStatus = map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
             var moveDown = (character.Position.y, character.Position.x + 1);
+            CheckAndChangeLevel(downDirectionStatus, character);
             foreach (var wall in _walls)
             {
                 if (downDirectionStatus == wall)
@@ -42,6 +57,7 @@ namespace Dungeon
         {
             var leftDirectionStatus = map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
             var moveLeft = (character.Position.y - 1, character.Position.x);
+            CheckAndChangeLevel(leftDirectionStatus, character);
             foreach (var wall in _walls)
             {
                 if (leftDirectionStatus == wall)
@@ -57,6 +73,7 @@ namespace Dungeon
         {
             var rightDirectionStatus = map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
             var moveRight = (character.Position.y + 1, character.Position.x);
+            CheckAndChangeLevel(rightDirectionStatus, character);
             foreach (var wall in _walls)
             {
                 if (rightDirectionStatus == wall)

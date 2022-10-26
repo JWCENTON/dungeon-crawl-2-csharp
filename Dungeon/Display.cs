@@ -10,11 +10,11 @@ namespace Dungeon
             MapManager.PutObjectOnMap(map, player.Position, player.Type);
             MapName(map);
             Console.WriteLine();
-            for (int i = player.Position.x - 10 ; i <= (player.Position.x + 10); i++)
+            for (var i = player.Position.x - 10 ; i <= (player.Position.x + 10); i++)
             {
 
                 Console.WriteLine("\n");
-                for (int j = player.Position.y - 20; j <= (player.Position.y + 20); j++)
+                for (var j = player.Position.y - 20; j <= (player.Position.y + 20); j++)
                 {
                     if (j == player.Position.y - 20)
                     {

@@ -12,6 +12,15 @@ namespace Dungeon.Maps
             CreateMap();
         }
 
+        private void PlaceRocks()
+        {
+            FullMap[46, 43] = new Square(Status.OutsideTopFloor);
+        }
+        private void PlaceCave()
+        {
+            var cave = new Cave();
+            cave.CreateCave(FullMap, (53, 42));
+        }
         public void CreateMap()
         {
             for (var i = 0; i < Width; i++)
@@ -38,7 +47,8 @@ namespace Dungeon.Maps
                     }
                 }
             }
-            FullMap[13, 23] = new Square(Status.Tree);
+            PlaceRocks();
+            PlaceCave();
         }
     }
 }

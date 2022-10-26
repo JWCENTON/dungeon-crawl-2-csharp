@@ -10,6 +10,7 @@ namespace Dungeon
             Name = "Alice";
             Health = 100;
             Type = Status.Player;
+            Level = "Top floor";
         }
     }
 }
