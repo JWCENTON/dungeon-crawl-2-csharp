@@ -55,9 +55,6 @@ namespace Dungeon
         {
             var rightDirectionStatus = map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
             var moveRight = (character.Position.y + 1, character.Position.x);
-            //if (map.FullMap[character.Position.x, character.Position.y + 1].GetStatus != "||" &&
-            //    map.FullMap[character.Position.x, character.Position.y + 1].GetStatus != "=" &&
-            //    map.FullMap[character.Position.x, character.Position.y + 1].GetStatus != "|")
             foreach (var wall in _walls)
             {
                 if (rightDirectionStatus == wall)
