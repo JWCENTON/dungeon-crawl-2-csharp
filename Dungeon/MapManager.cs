@@ -5,14 +5,19 @@ namespace Dungeon
 {
     internal class MapManager
     {
-        public static void PutObjectOnMap(Map map, Character character)
+        public static void PutObjectOnMap(Map map, (int x,int y) coordinates, Status typeStatus)
         {
-            map.FullMap[character.Position.x, character.Position.y] = new Square(Status.Player);
+            int x = coordinates.x;
+            int y = coordinates.y;
+
+            map.FullMap[x, y] = new Square(typeStatus);
         }
 
-        public static void TakeOffObjectFromMap(Map map, Character character)
+        public static void TakeOffObjectFromMap(Map map, (int x, int y) coordinates)
         {
-            map.FullMap[character.Position.x, character.Position.y] = new Square(Status.Empty);
+            int x = coordinates.x;
+            int y = coordinates.y;
+            map.FullMap[x, y] = new Square(Status.Empty);
         }
     }
 }

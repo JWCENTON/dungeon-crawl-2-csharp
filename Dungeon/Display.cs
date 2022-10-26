@@ -1,6 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using Dungeon.Enum;
-using Dungeon.Maps;
+﻿using Dungeon.Maps;
 
 namespace Dungeon
 {
@@ -8,7 +6,7 @@ namespace Dungeon
     {
         public static void Map(Map map, Character player)
         {
-            MapManager.PutObjectOnMap(map, player);
+            MapManager.PutObjectOnMap(map, player.Position, player.Type);
             MapName(map);
             Console.WriteLine();
             for (int i = player.Position.x - 10 ; i <= (player.Position.x + 10); i++)
@@ -20,7 +18,7 @@ namespace Dungeon
                     Console.Write($"{map.FullMap[i, j].GetStatus}");
                 }
             }
-            MapManager.TakeOffObjectFromMap(map, player);
+            MapManager.TakeOffObjectFromMap(map, player.Position);
 
             Console.WriteLine("\n");
         }
