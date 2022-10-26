@@ -1,15 +1,10 @@
 ﻿using Dungeon.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dungeon.Maps
 {
     public class Tree
     {
-        private void CreateTreeLeg(Square[,] map, (int x, int y) start) // 13, 30
+        private void CreateTreeLeg(Square[,] map, (int x, int y) start)
         {
             var leftLeg = start.y;
             var rightLeg = start.y + 1;
@@ -40,7 +35,7 @@ namespace Dungeon.Maps
             }
         }
 
-        public void CreateTree(Square[,] map, (int x, int y) start) // 13,30
+        public void CreateTree(Square[,] map, (int x, int y) start)
         {
             CreateTreeLeg(map, start);
             CreateTreeHead(map, start);

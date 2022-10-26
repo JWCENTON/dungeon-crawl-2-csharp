@@ -18,44 +18,56 @@ namespace Dungeon.Maps
 
         private void PlaceTree((int x, int y) startCoordinates)
         {
-            Tree newTree = new Tree();
-            //var startCoordinate = (13, 30);
+            var newTree = new Tree();
             newTree.CreateTree(FullMap, startCoordinates);
         }
 
-        private void CreateWallsAndEmptySpace(int i, int j)
+        private void PlaceForest()
         {
-            if ((i == 9 || i == Width - 20) && j > 19 && j < Width - 20)
+            PlaceTree((13, 30));
+            PlaceTree((13, 33));
+            PlaceTree((20, 45));
+            PlaceTree((23, 48));
+            PlaceTree((24, 34));
+            PlaceTree((34, 38));
+            PlaceTree((37, 42));
+            PlaceTree((53, 24));
+            PlaceTree((54, 29));
+            PlaceTree((54, 34));
+        }
+
+        private void CreateWallsAndEmptySpace(int row, int col)
+        {
+            if ((row == 9 || row == Width - 20) && col > 19 && col < Width - 20)
             {
-                FullMap[i, j] = new Square(Status.UpDownWall);
+                FullMap[row, col] = new Square(Status.UpDownWall);
             }
 
-            else if ((j == 19 || j == Width - 20) && i >= 9 && i < Width - 19)
+            else if ((col == 19 || col == Width - 20) && row >= 9 && row < Width - 19)
             {
-                FullMap[i, j] = new Square(Status.SideWall);
+                FullMap[row, col] = new Square(Status.SideWall);
             }
-            else if (i >= 0 && i < 9 || i > Width - 20 && i <= Width ||
-                     j >= 0 && j < 19 || j > Width - 20 && j <= Width)
+            else if (row >= 0 && row < 9 || row > Width - 20 && row <= Width ||
+                     col >= 0 && col < 19 || col > Width - 20 && col <= Width)
             {
-                FullMap[i, j] = new Square(Status.OutsideTopFloor);
+                FullMap[row, col] = new Square(Status.OutsideTopFloor);
             }
             else
             {
-                FullMap[i, j] = new Square(Status.Empty);
+                FullMap[row, col] = new Square(Status.Empty);
             }
         }
         public void CreateMap()
         {
-            for (var i = 0; i < Width; i++)
+            for (var row = 0; row < Width; row++)
             {
-                for (var j = 0; j < Width; j++)
+                for (var col = 0; col < Width; col++)
                 {
-                    CreateWallsAndEmptySpace(i, j);
+                    CreateWallsAndEmptySpace(row, col);
                 }
             }
             PlaceStartIcon();
-            PlaceTree((13, 30));
-            PlaceTree((13, 33));
+            PlaceForest();
         }
     }
 }
