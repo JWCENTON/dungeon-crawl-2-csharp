@@ -12,15 +12,37 @@ namespace Dungeon.Maps
             CreateMap();
         }
         
-        private void StartName()
+        private void PlaceStartIcon()
         {
             FullMap[10, 20] = new Square(Status.Start);
         }
 
-        private void Tree()
+        private void PlaceTree()
         {
             Tree newTree = new Tree();
             newTree.CreateTree(FullMap);
+        }
+
+        private void CreateWallsAndEmptySpace(int i, int j)
+        {
+            if ((i == 9 || i == Width - 20) && j > 19 && j < Width - 20)
+            {
+                FullMap[i, j] = new Square(Status.UpDownWall);
+            }
+
+            else if ((j == 19 || j == Width - 20) && i >= 9 && i < Width - 19)
+            {
+                FullMap[i, j] = new Square(Status.SideWall);
+            }
+            else if (i >= 0 && i < 9 || i > Width - 20 && i <= Width ||
+                     j >= 0 && j < 19 || j > Width - 20 && j <= Width)
+            {
+                FullMap[i, j] = new Square(Status.OutsideTopFloor);
+            }
+            else
+            {
+                FullMap[i, j] = new Square(Status.Empty);
+            }
         }
         public void CreateMap()
         {
@@ -28,28 +50,11 @@ namespace Dungeon.Maps
             {
                 for (var j = 0; j < Width; j++)
                 {
-                    if ((i == 9 || i == Width - 20) && j > 19 && j < Width - 20)
-                    {
-                        FullMap[i, j] = new Square(Status.UpDownWall);
-                    }
-
-                    else if ((j == 19 || j == Width - 20) && i >= 9 && i < Width - 19)
-                    {
-                        FullMap[i, j] = new Square(Status.SideWall);
-                    }
-                    else if (i >= 0 && i < 9 || i > Width - 20 && i <= Width ||
-                             j >= 0 && j < 19 || j > Width - 20 && j <= Width)
-                    {
-                        FullMap[i, j] = new Square(Status.OutsideTopFloor);
-                    }
-                    else
-                    {
-                        FullMap[i, j] = new Square(Status.Empty);
-                    }
+                    CreateWallsAndEmptySpace(i, j);
                 }
             }
-            StartName();
-            Tree();
+            PlaceStartIcon();
+            PlaceTree();
         }
     }
 }
