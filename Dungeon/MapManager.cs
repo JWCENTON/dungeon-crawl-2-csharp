@@ -1,4 +1,5 @@
 ﻿using Dungeon.Enum;
+using Dungeon.Maps;
 
 namespace Dungeon
 {
