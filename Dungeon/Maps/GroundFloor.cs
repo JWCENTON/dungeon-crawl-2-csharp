@@ -5,7 +5,8 @@ namespace Dungeon.Maps
     public class GroundFloor : Map
     {
         public override string Name { get; }
-
+        private Random _rd = new Random();
+        
         public GroundFloor()
         {
             Name = "Ground floor";
@@ -14,7 +15,13 @@ namespace Dungeon.Maps
 
         private void PlaceRocks()
         {
-            FullMap[46, 43] = new Square(Status.OutsideTopFloor);
+            var totalRocks = 50;
+            for (var rockNumber = 0; rockNumber <= totalRocks; rockNumber++)
+            {
+                var newX = _rd.Next(11, 69);
+                var newY = _rd.Next(21, 59);
+                FullMap[newX, newY] = new Square(Status.OutsideTopFloor);
+            }
         }
         private void PlaceCave()
         {
