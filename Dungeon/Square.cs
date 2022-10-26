@@ -41,6 +41,18 @@ namespace Dungeon
             {
                 return ">";
             }
+            else if (status == Status.Monster1)
+            {
+                return "1";
+            }
+            else if (status == Status.Monster2)
+            {
+                return "2";
+            }
+            else if (status == Status.Monster3)
+            {
+                return "3";
+            }
             else
             {
                 return " ";

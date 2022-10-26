@@ -9,6 +9,9 @@
         SideWall,
         OutsideTopFloor,
         OutsideGroundFloor,
-        Start
+        Start,
+        Monster1,
+        Monster2,
+        Monster3
     }
 }

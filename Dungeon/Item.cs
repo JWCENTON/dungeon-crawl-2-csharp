@@ -1,7 +1,12 @@
 ﻿namespace Dungeon
 {
-    internal class Item
+    public class Item
     {
         public string name;
+
+        public Item(string Name)
+        {
+            this.name = Name;
+        }
     }
 }
