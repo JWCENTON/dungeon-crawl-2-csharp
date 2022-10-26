@@ -6,48 +6,63 @@ namespace Dungeon.Maps
 {
     public class Cave
     {
+        private readonly Square _caveWallLeft = new Square(Status.CaveLeftWall);
+        private readonly Square _caveWallRight = new Square(Status.CaveRightWall);
+        private void CreateWalLeftBend(Square[,] map, (int x, int y) firstTopCoordinate)
+        {
+            var x = firstTopCoordinate.x;
+            var y = firstTopCoordinate.y;
+            map[x, y] = _caveWallLeft;
+            map[x, y + 3] = _caveWallLeft;
+            map[x, y + 13] = _caveWallLeft;
+            map[x + 1, y + 1] = _caveWallLeft;
+            map[x + 1, y + 14] = _caveWallLeft;
+            map[x + 4, y + 11] = _caveWallLeft;
+            map[x + 5, y] = _caveWallLeft;
+            map[x - 1, y + 12] = _caveWallLeft;
+            map[x - 1, y + 10] = _caveWallLeft;
+            map[x - 1, y + 8] = _caveWallLeft;
+            map[x - 1, y + 2] = _caveWallLeft;
+        }
+
+        private void CreateWalRightBend(Square[,] map, (int x, int y) firstTopCoordinate)
+        {
+            var x = firstTopCoordinate.x;
+            var y = firstTopCoordinate.y;
+            map[x - 1, y + 1] = _caveWallRight;
+            map[x - 1, y + 11] = _caveWallRight;
+            map[x - 1, y + 9] = _caveWallRight;
+            map[x - 1, y + 7] = _caveWallRight;
+            map[x, y + 6] = _caveWallRight;
+            map[x + 2, y + 1] = _caveWallRight;
+            map[x + 2, y + 14] = _caveWallRight;
+            map[x + 3, y] = _caveWallRight;
+            map[x + 3, y + 13] = _caveWallRight;
+            map[x + 4, y - 1] = _caveWallRight;
+            map[x + 4, y + 10] = _caveWallRight;
+            map[x + 4, y + 12] = _caveWallRight;
+            map[x + 5, y + 9] = _caveWallRight;
+            map[x + 6, y + 1] = _caveWallRight;
+
+            for (var yCor = 1; yCor <= 8; yCor++)
+            {
+                map[x + 6, y + yCor] = _caveWallRight;
+            }
+        }
+
+        private void CreateEntrance(Square[,] map, (int x, int y) firstTopCoordinate)
+        {
+            var x = firstTopCoordinate.x;
+            var y = firstTopCoordinate.y;
+            map[x + 1, y + 5] = new Square(Status.Entrance);
+            map[x + 1, y + 4] = new Square(Status.Entrance);
+        }
+
         public void CreateCave(Square[,] map, (int x, int y) firstTopCoordinate)
         {
-            var caveWallLeft = new Square(Status.CaveLeftWall);
-            var caveWallRight = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x, firstTopCoordinate.y] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x + 1, firstTopCoordinate.y + 1] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 1] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 2, firstTopCoordinate.y + 1] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 3, firstTopCoordinate.y] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 4, firstTopCoordinate.y - 1] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 5, firstTopCoordinate.y] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 1] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 5, firstTopCoordinate.y] = new Square(Status.CaveLeftWall);
-
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 1] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 2] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 3] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 4] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 5] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 6] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 7] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 6, firstTopCoordinate.y + 8] = new Square(Status.CaveRightWall);
-
-            map[firstTopCoordinate.x + 5, firstTopCoordinate.y + 9] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 4, firstTopCoordinate.y + 10] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 4, firstTopCoordinate.y + 11] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x + 4, firstTopCoordinate.y + 12] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 3, firstTopCoordinate.y + 13] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 2, firstTopCoordinate.y + 14] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x + 1, firstTopCoordinate.y + 14] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x, firstTopCoordinate.y + 13] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 12] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 11] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 10] = new Square(Status.CaveLeftWall);
-
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 9] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 8] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 7] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x, firstTopCoordinate.y + 6] = new Square(Status.CaveRightWall);
-            map[firstTopCoordinate.x - 1, firstTopCoordinate.y + 2] = new Square(Status.CaveLeftWall);
-            map[firstTopCoordinate.x, firstTopCoordinate.y + 3] = new Square(Status.CaveLeftWall);
-
+            CreateWalLeftBend(map, firstTopCoordinate);
+            CreateWalRightBend(map, firstTopCoordinate);
+            CreateEntrance(map, firstTopCoordinate);
         }
     }
 }

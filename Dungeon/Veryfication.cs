@@ -6,7 +6,7 @@ namespace Dungeon
 {
     public class Verification
     {
-        private readonly List<string> _walls = new List<string>{"=", "|", "||", "/", "\\"};
+        private readonly List<string> _walls = new List<string>{"=", "|", "||", "/", "\\", "#"};
 
         public bool DirectionUpIsWall(Map map, Character character)
         {

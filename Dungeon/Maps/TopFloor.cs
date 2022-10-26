@@ -31,6 +31,7 @@ namespace Dungeon.Maps
             PlaceTree((24, 34));
             PlaceTree((34, 38));
             PlaceTree((37, 42));
+            PlaceTree((45, 52));
             PlaceTree((53, 24));
             PlaceTree((54, 29));
             PlaceTree((54, 34));

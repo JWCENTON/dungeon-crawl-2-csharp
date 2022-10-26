@@ -61,6 +61,10 @@ namespace Dungeon.Maps
             {
                 return "/";
             }
+            else if (status == Status.Entrance)
+            {
+                return "#";
+            }
             else
             {
                 return " ";
