@@ -1,6 +1,6 @@
 ﻿namespace Dungeon.Monsters
 {
-    public class Monster1 : Monster
+    public class Wolf : Monster
 
     {
         public (int x, int y) Position { get; set; }
@@ -10,9 +10,9 @@
         public string TypeAtack { get; }
         public Item Item { get; set; }
 
-        public Monster1()
+        public Wolf((int, int) startedPosition)
         {
-            Position = (29, 25);
+            this.Position = startedPosition;
             Name = "Wolf";
             Health = SetMonsterIntValue(21,29);
             AtackValue = SetMonsterIntValue(4, 8);
