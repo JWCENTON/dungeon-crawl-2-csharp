@@ -1,4 +1,6 @@
-﻿namespace Dungeon.Monsters
+﻿using Dungeon.Enum;
+
+namespace Dungeon.Monsters
 {
     public class Wolf : Monster
     {
@@ -10,6 +12,7 @@
             TypeAtack = "Beat";
             this.Item = new Item("Claw");
             IsAlive = true;
+            Type = Status.Monster1;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Dungeon
                     Console.Write($"{map.FullMap[i, j].GetStatus}");
                 }
             }
-            MapManager.TakeOffObjectFromMap(map, player.Position);
+            MapManager.RemoveObjectFromMap(map, player.Position);
 
             Console.WriteLine("\n");
         }
