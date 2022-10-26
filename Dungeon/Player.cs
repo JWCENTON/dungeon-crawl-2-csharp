@@ -4,7 +4,7 @@
     {
         public Player()
         {
-            Position = (21, 11);
+            Position = (57, 48); // 21, 11
             Name = "Alice";
             Health = 100;
         }

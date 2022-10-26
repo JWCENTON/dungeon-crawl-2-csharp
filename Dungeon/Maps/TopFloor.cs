@@ -36,6 +36,13 @@ namespace Dungeon.Maps
             PlaceTree((54, 34));
         }
 
+        private void PlaceCave()
+        {
+            var cave = new Cave();
+            cave.CreateCave(FullMap, (53, 42));
+        }
+
+
         private void CreateWallsAndEmptySpace(int row, int col)
         {
             if ((row == 9 || row == Width - 20) && col > 19 && col < Width - 20)
@@ -68,8 +75,7 @@ namespace Dungeon.Maps
             }
             PlaceStartIcon();
             PlaceForest();
-            FullMap[25, 35] = new Square(Status.CaveLeftWall);
-            FullMap[24, 34] = new Square(Status.CaveRightWall);
+            PlaceCave();
         }
     }
 }
