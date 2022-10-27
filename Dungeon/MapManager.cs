@@ -21,7 +21,13 @@ namespace Dungeon
 
             map.FullMap[x, y] = new Square(Status.Empty);
         }
+        public static void PutMonsterOnMap(Map map, Monster monster, Status typeStatus)
+        {
+            int x = monster.Position.Item2;
+            int y = monster.Position.Item1;
 
+            map.FullMap[x, y] = new Square(typeStatus, monster);
+        }
         public static void SetMonstersOnMap(Map map, List<Monster> Monsters)
         {
             foreach (var monster in Monsters)
