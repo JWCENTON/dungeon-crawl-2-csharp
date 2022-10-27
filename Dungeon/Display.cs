@@ -66,5 +66,9 @@ namespace Dungeon
             PlayerEquipment(player);
         }
 
+        public static void EndGame()
+        {
+            Console.WriteLine("\n\n\n\tGAME OVER\n\n\n");
+        }
     }
 }
