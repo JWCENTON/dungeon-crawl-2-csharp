@@ -16,6 +16,7 @@
         CaveLeftWall,
         CaveRightWall,
         Entrance,
-        Key
+        Key,
+        Apple
     }
 }

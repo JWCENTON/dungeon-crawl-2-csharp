@@ -21,6 +21,10 @@ namespace Dungeon
                 {
                     Console.Write($"Key | ");
                 }
+                else if (item == "A")
+                {
+                    Console.Write($"Apple | ");
+                }
             }
         }
         public static void Map(Map map, Character player)

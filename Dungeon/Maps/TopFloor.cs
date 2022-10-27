@@ -48,6 +48,11 @@ namespace Dungeon.Maps
             FullMap[50, 50] = new Square(Status.Key);
         }
 
+        private void PlaceApple()
+        {
+            FullMap[51, 57] = new Square(Status.Apple);
+        }
+
         private void CreateWallsAndEmptySpace(int row, int col)
         {
             if ((row == 9 || row == Width - 20) && col > 19 && col < Width - 20)
@@ -82,6 +87,7 @@ namespace Dungeon.Maps
             PlaceForest();
             PlaceCave();
             PlaceKey();
+            PlaceApple();
         }
     }
 }
