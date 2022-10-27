@@ -8,7 +8,7 @@ namespace Dungeon
         {
             Position = (21, 11); // 21, 11
             Name = "Alice";
-            Health = 0;
+            Health = 90;
             Type = Status.Player;
             Level = "Top floor";
             Equipment = new List<string>();
