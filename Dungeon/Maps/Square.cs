@@ -6,16 +6,19 @@ namespace Dungeon.Maps
     public class Square
     {
         public string GetStatus { get; }
-        public Monster Monster { get; set; }
+        public Monster Monster { get; }
+        public Status Status { get; }
 
         public Square(Status status)
         {
             GetStatus = GetSquareStatus(status);
+            this.Status = status;
         }
 
         public Square(Status status, Monster someMonster)
         {
             GetStatus = GetSquareStatus(status);
+            this.Status = status;
             Monster = someMonster;
         }
 

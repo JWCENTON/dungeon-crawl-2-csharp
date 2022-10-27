@@ -1,4 +1,5 @@
 ﻿using Dungeon.Enum;
+using Dungeon.Monsters;
 
 namespace Dungeon.Maps
 {
@@ -51,8 +52,8 @@ namespace Dungeon.Maps
 
         private void PlaceBoss()
         {
-            FullMap[21, 31] = new Square(Status.Boss);
-            FullMap[21, 32] = new Square(Status.Boss);
+            FullMap[21, 31] = new Square(Status.Boss, new Boss((21, 31)));
+            FullMap[21, 32] = new Square(Status.Boss, new Boss((21, 31)));
         }
 
         public void CreateMap()

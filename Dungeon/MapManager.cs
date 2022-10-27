@@ -34,7 +34,7 @@ namespace Dungeon
             {
                 if (monster.IsAlive == true)
                 {
-                    PutObjectOnMap(map, monster.Position, monster.Type);
+                    PutMonsterOnMap(map, monster, monster.Type);
                 }
                 
             }

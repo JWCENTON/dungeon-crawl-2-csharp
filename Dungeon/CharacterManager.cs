@@ -25,8 +25,10 @@ namespace Dungeon
             return (yCoordinate, xCoordinate);
         }
 
-        internal void GetPlayerMove(Character player, Map map, Monster boss)
+        internal void GetPlayerMove(Character player, Map map)
         {
+            Verification verify = new Verification();
+            Fight.Fight fight = new Fight.Fight();
             bool endOfMovement = false;
             while (!endOfMovement)
             {
@@ -59,15 +61,11 @@ namespace Dungeon
                     if (direction != Direction.DontMove && direction != Direction.Inventory)
                     {
                         ChangePosition(player, direction, map);
-                        if (Verification.IsMonsterNearby(player, map))
+                        if (verify.IsMonsterNearby(player, map))
                         {
-                            // TODO: fight
+                            Monster monster = verify.WhatMonsterIsNearby(map, player.Position);
+                            fight.FightWithMonster(player, monster);
                             Console.WriteLine("NICE");
-                        }
-                        else if (Verification.IsBossNearby(player, map, boss))
-                        {
-                            // TODO: fight
-                            Console.WriteLine("NICE BOSS");
                         }
                         endOfMovement = true;
                     }
@@ -116,6 +114,7 @@ namespace Dungeon
 
         public void ChangePosition(Character character, Direction direction, Map map)
         {
+            Verification verify = new Verification();
             var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             var downDirectionStatus = map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
             var leftDirectionStatus = map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
@@ -124,7 +123,7 @@ namespace Dungeon
             {
                 case Direction.Up:
                     Equipment.CollectItems(character, upDirectionStatus, map);
-                    if (Verification.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
+                    if (verify.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
                     {
                         break;
                     }
@@ -132,7 +131,7 @@ namespace Dungeon
                     break;
                 case Direction.Down:
                     Equipment.CollectItems(character, downDirectionStatus, map);
-                    if (Verification.DirectionDownIsWallOrChangeLevel(downDirectionStatus, character))
+                    if (verify.DirectionDownIsWallOrChangeLevel(downDirectionStatus, character))
                     {
                         break;
                     }
@@ -140,7 +139,7 @@ namespace Dungeon
                     break;
                 case Direction.Left:
                     Equipment.CollectItems(character, leftDirectionStatus, map);
-                    if (Verification.DirectionLeftIsWallOrChangeLevel(leftDirectionStatus, character))
+                    if (verify.DirectionLeftIsWallOrChangeLevel(leftDirectionStatus, character))
                     {
                         break;
                     }
@@ -148,7 +147,7 @@ namespace Dungeon
                     break;
                 case Direction.Right:
                     Equipment.CollectItems(character, rightDirectionStatus, map);
-                    if (Verification.DirectionRightIsWallOrChangeLevel(rightDirectionStatus, character))
+                    if (verify.DirectionRightIsWallOrChangeLevel(rightDirectionStatus, character))
                     {
                         break;
                     }

@@ -10,7 +10,7 @@ namespace Dungeon
             MapManager.SetMonstersOnMap(map, monsters);
             Display.Map(map, player);
             Display.DisplayPlayerDetails(player);
-            manager.GetPlayerMove(player, map, boss);
+            manager.GetPlayerMove(player, map);
 
             player.EatApple();
             //Console.Clear();
