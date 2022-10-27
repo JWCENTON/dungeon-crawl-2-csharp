@@ -7,6 +7,26 @@ namespace Dungeon
     public class CharacterManager
     {
         public List<Monster> Monsters = new();
+
+        private List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
+        {
+            ((44,23), (49,45)), ((30,23), (33,48))
+        };
+
+        private (int, int) GetMonsterPosition()
+        {
+            Random random = new Random();
+            int randomIndex = random.Next(0, _allowedMonsterPositions.Count);
+            var area = _allowedMonsterPositions[randomIndex];
+
+            int xCoordinate = random.Next(area.Item1.Item1, area.Item2.Item1);
+            int yCoordinate = random.Next(area.Item1.Item2, area.Item2.Item2);
+
+            Console.WriteLine($"x: {xCoordinate}   y: {yCoordinate}");
+
+            return (yCoordinate, xCoordinate);
+        }
+
         internal void GetPlayerMove(Character character, Map map)
         {
             bool endOfMovement = false;
@@ -62,7 +82,7 @@ namespace Dungeon
             switch (typeOfMonster)
             {
                 case Status.Monster1:
-                    return new Wolf((29,32));
+                    return new Wolf(GetMonsterPosition());
             }
             // TODO: throw error (not exist monster)
 
