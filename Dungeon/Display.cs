@@ -14,14 +14,16 @@ namespace Dungeon
 
         private static void PlayerEquipment(Character player)
         {
+            var keySign = "K";
+            var appleSign = "A";
             Console.Write($"Equipment : ");
             foreach (var item in player.Equipment)
             {
-                if (item == "K")
+                if (item == keySign)
                 {
                     Console.Write($"Key | ");
                 }
-                else if (item == "A")
+                else if (item == appleSign)
                 {
                     Console.Write($"Apple | ");
                 }
