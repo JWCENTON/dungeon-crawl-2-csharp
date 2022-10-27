@@ -26,7 +26,11 @@ namespace Dungeon
         {
             foreach (var monster in Monsters)
             {
-                PutObjectOnMap(map, monster.Position, monster.Type);
+                if (monster.IsAlive == true)
+                {
+                    PutObjectOnMap(map, monster.Position, monster.Type);
+                }
+                
             }
         }
 
