@@ -6,9 +6,9 @@ namespace Dungeon
     {
         public Player()
         {
-            Position = (57, 48); // 21, 11
+            Position = (21, 11); // 21, 11
             Name = "Alice";
-            Health = 100;
+            Health = 90;
             Type = Status.Player;
             Level = "Top floor";
             Equipment = new List<string>();
@@ -19,12 +19,13 @@ namespace Dungeon
         {
             var fullHealth = 100;
             var applePower = 10;
+            var apple = "A";
             if (Health < fullHealth)
             {
-                if (Equipment.Contains("A"))
+                if (Equipment.Contains(apple))
                 {
                     Health += applePower;
-                    Equipment.Remove("A");
+                    Equipment.Remove(apple);
                 }
             }
         }
