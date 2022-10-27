@@ -8,7 +8,7 @@ namespace Dungeon
     {
         public List<Monster> Monsters = new();
 
-        private List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
+        private readonly List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
         {
             ((44,23), (49,45)), ((30,23), (33,48))
         };
@@ -21,9 +21,7 @@ namespace Dungeon
 
             int xCoordinate = random.Next(area.Item1.Item1, area.Item2.Item1);
             int yCoordinate = random.Next(area.Item1.Item2, area.Item2.Item2);
-
-            Console.WriteLine($"x: {xCoordinate}   y: {yCoordinate}");
-
+            
             return (yCoordinate, xCoordinate);
         }
 
