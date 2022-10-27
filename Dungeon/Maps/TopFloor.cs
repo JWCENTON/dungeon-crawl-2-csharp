@@ -43,6 +43,25 @@ namespace Dungeon.Maps
             cave.CreateCave(FullMap, (53, 42));
         }
 
+        private void PlaceKey()
+        {
+            FullMap[50, 50] = new Square(Status.Key);
+        }
+
+        private void PlaceApple()
+        {
+            Random rd = new Random();
+
+            var numberOfApples = 1;
+            for (var apple = 0; apple <= numberOfApples; apple++)
+            {
+                var x = rd.Next(40, 51);
+                var y = rd.Next(21, 40);
+                FullMap[x, y] = new Square(Status.Apple);
+            }
+            FullMap[51, 57] = new Square(Status.Apple);
+            FullMap[11, 54] = new Square(Status.Apple);
+        }
 
         private void CreateWallsAndEmptySpace(int row, int col)
         {
@@ -77,7 +96,8 @@ namespace Dungeon.Maps
             PlaceStartIcon();
             PlaceForest();
             PlaceCave();
-            FullMap[50, 50] = new Square(Status.Key);
+            PlaceKey();
+            PlaceApple();
         }
     }
 }

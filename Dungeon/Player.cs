@@ -6,20 +6,29 @@ namespace Dungeon
     {
         public Player()
         {
-            Position = (57, 48); // 21, 11
+            Position = (21, 11); // 21, 11
             Name = "Alice";
-            Health = 100;
+            Health = 90;
             Type = Status.Player;
             Level = "Top floor";
             Equipment = new List<string>();
+            EatApple();
         }
 
-        public void CollectKey(string direction)
+        public override void EatApple()
         {
-            if (direction != "K")
+            var fullHealth = 100;
+            var applePower = 10;
+            var apple = "A";
+            if (Health < fullHealth)
             {
-                Equipment.Add("K");
+                if (Equipment.Contains(apple))
+                {
+                    Health += applePower;
+                    Equipment.Remove(apple);
+                }
             }
         }
+
     }
 }

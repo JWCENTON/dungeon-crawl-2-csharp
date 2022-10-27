@@ -77,6 +77,10 @@ namespace Dungeon.Maps
             {
                 return "K";
             }
+            else if (status == Status.Apple)
+            {
+                return "A";
+            }
             else
             {
                 return " ";

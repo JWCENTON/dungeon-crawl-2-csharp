@@ -120,7 +120,7 @@ namespace Dungeon
             switch (direction)
             {
                 case Direction.Up:
-                    Equipment.CollectKey(character, upDirectionStatus);
+                    Equipment.CollectItems(character, upDirectionStatus, map);
                     if (verify.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
                     {
                         break;
@@ -128,7 +128,7 @@ namespace Dungeon
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Down:
-                    Equipment.CollectKey(character, downDirectionStatus);
+                    Equipment.CollectItems(character, downDirectionStatus, map);
                     if (verify.DirectionDownIsWallOrChangeLevel(downDirectionStatus, character))
                     {
                         break;
@@ -136,7 +136,7 @@ namespace Dungeon
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Left:
-                    Equipment.CollectKey(character, leftDirectionStatus);
+                    Equipment.CollectItems(character, leftDirectionStatus, map);
                     if (verify.DirectionLeftIsWallOrChangeLevel(leftDirectionStatus, character))
                     {
                         break;
@@ -144,7 +144,7 @@ namespace Dungeon
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Right:
-                    Equipment.CollectKey(character, rightDirectionStatus);
+                    Equipment.CollectItems(character, rightDirectionStatus, map);
                     if (verify.DirectionRightIsWallOrChangeLevel(rightDirectionStatus, character))
                     {
                         break;

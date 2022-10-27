@@ -13,5 +13,10 @@ namespace Dungeon
 
         public virtual int AtackValue { get; set; }
         public virtual bool IsAlive { get; set; }
+
+        public virtual void EatApple ()
+        {
+        }
+    
     }
 }
