@@ -48,6 +48,13 @@ namespace Dungeon.Maps
             FullMap[12, 24] = new Square(Status.Apple);
             FullMap[11, 54] = new Square(Status.Apple);
         }
+
+        private void PlaceBoss()
+        {
+            FullMap[21, 31] = new Square(Status.Boss);
+            FullMap[21, 32] = new Square(Status.Boss);
+        }
+
         public void CreateMap()
         {
             for (var i = 0; i < Width; i++)
@@ -77,6 +84,7 @@ namespace Dungeon.Maps
             PlaceRocks();
             PlaceCave();
             PlaceApple();
+            PlaceBoss();
         }
     }
 }

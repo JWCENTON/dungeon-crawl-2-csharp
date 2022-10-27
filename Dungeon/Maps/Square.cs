@@ -81,6 +81,10 @@ namespace Dungeon.Maps
             {
                 return "A";
             }
+            else if (status == Status.Boss)
+            {
+                return "B";
+            }
             else
             {
                 return " ";

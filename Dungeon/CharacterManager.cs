@@ -112,7 +112,6 @@ namespace Dungeon
 
         public void ChangePosition(Character character, Direction direction, Map map)
         {
-            Verification verify = new Verification();
             var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             var downDirectionStatus = map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
             var leftDirectionStatus = map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
@@ -121,7 +120,7 @@ namespace Dungeon
             {
                 case Direction.Up:
                     Equipment.CollectItems(character, upDirectionStatus, map);
-                    if (verify.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
+                    if (Verification.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
                     {
                         break;
                     }
@@ -129,7 +128,7 @@ namespace Dungeon
                     break;
                 case Direction.Down:
                     Equipment.CollectItems(character, downDirectionStatus, map);
-                    if (verify.DirectionDownIsWallOrChangeLevel(downDirectionStatus, character))
+                    if (Verification.DirectionDownIsWallOrChangeLevel(downDirectionStatus, character))
                     {
                         break;
                     }
@@ -137,7 +136,7 @@ namespace Dungeon
                     break;
                 case Direction.Left:
                     Equipment.CollectItems(character, leftDirectionStatus, map);
-                    if (verify.DirectionLeftIsWallOrChangeLevel(leftDirectionStatus, character))
+                    if (Verification.DirectionLeftIsWallOrChangeLevel(leftDirectionStatus, character))
                     {
                         break;
                     }
@@ -145,7 +144,7 @@ namespace Dungeon
                     break;
                 case Direction.Right:
                     Equipment.CollectItems(character, rightDirectionStatus, map);
-                    if (verify.DirectionRightIsWallOrChangeLevel(rightDirectionStatus, character))
+                    if (Verification.DirectionRightIsWallOrChangeLevel(rightDirectionStatus, character))
                     {
                         break;
                     }

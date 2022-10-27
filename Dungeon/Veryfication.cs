@@ -5,7 +5,7 @@ namespace Dungeon
 {
     public class Verification
     {
-        private readonly List<string> _walls = new() { "=", "|", "||", "/", "\\", "#", "^" };
+        private static List<string> _walls = new() { "=", "|", "||", "/", "\\", "#", "^" };
 
         private static bool ItIsWall(string direction,List<string> _walls)
         {
@@ -47,7 +47,7 @@ namespace Dungeon
             ;
         }
 
-        public bool DirectionUpIsWallOrChangeLevel(string direction, Character character)
+        public static bool DirectionUpIsWallOrChangeLevel(string direction, Character character)
         {
             var upDirectionStatus = direction; //map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             var moveUp = (character.Position.y, character.Position.x - 1);
@@ -57,7 +57,7 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionDownIsWallOrChangeLevel(string direction, Character character)
+        public static bool DirectionDownIsWallOrChangeLevel(string direction, Character character)
         {
             var downDirectionStatus = direction; //map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
             var moveDown = (character.Position.y, character.Position.x + 1);
@@ -67,7 +67,7 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionLeftIsWallOrChangeLevel(string direction, Character character)
+        public static bool DirectionLeftIsWallOrChangeLevel(string direction, Character character)
         {
             var leftDirectionStatus = direction; //map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
             var moveLeft = (character.Position.y - 1, character.Position.x);
@@ -77,7 +77,7 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionRightIsWallOrChangeLevel(string direction, Character character)
+        public static bool DirectionRightIsWallOrChangeLevel(string direction, Character character)
         {
             var rightDirectionStatus = direction; //map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
             var moveRight = (character.Position.y + 1, character.Position.x);

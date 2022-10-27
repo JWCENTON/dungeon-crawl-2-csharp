@@ -17,6 +17,7 @@
         CaveRightWall,
         Entrance,
         Key,
-        Apple
+        Apple, 
+        Boss
     }
 }
