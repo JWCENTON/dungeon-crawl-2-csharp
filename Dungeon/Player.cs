@@ -12,6 +12,7 @@ namespace Dungeon
             Type = Status.Player;
             Level = "Top floor";
             Equipment = new List<string>();
+            AtackValue = 10;
             EatApple();
         }
 

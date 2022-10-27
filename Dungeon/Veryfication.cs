@@ -1,5 +1,7 @@
 ﻿using Dungeon.Enum;
 using Dungeon.Maps;
+using Dungeon.Monsters;
+using System.Numerics;
 
 namespace Dungeon
 {
@@ -20,11 +22,11 @@ namespace Dungeon
             return false;
         }
 
-        public bool IsMonsterNearby(Character player, Map map)
+        public static bool IsMonsterNearby(Character player, Map map)
         {
             int xCoordinate = player.Position.x;
             int yCoordinate = player.Position.y;
-            List<string> monsterStatusList = new List<string> { "1", "2", "3" };
+            List<string> monsterStatusList = new List<string> { "1", "2", "3", "B" };
 
             if (monsterStatusList.Contains(map.FullMap[xCoordinate + 1, yCoordinate].GetStatus))
             {
@@ -45,6 +47,12 @@ namespace Dungeon
 
             return false;
             ;
+        }
+
+        public static bool IsBossNearby(Character player, Map map, Monster boss)
+        {
+
+            return false;
         }
 
         public static bool DirectionUpIsWallOrChangeLevel(string direction, Character character)

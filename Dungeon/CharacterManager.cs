@@ -25,9 +25,8 @@ namespace Dungeon
             return (yCoordinate, xCoordinate);
         }
 
-        internal void GetPlayerMove(Character player, Map map)
+        internal void GetPlayerMove(Character player, Map map, Monster boss)
         {
-            Verification verify = new Verification();
             bool endOfMovement = false;
             while (!endOfMovement)
             {
@@ -60,10 +59,15 @@ namespace Dungeon
                     if (direction != Direction.DontMove && direction != Direction.Inventory)
                     {
                         ChangePosition(player, direction, map);
-                        if (verify.IsMonsterNearby(player, map))
+                        if (Verification.IsMonsterNearby(player, map))
                         {
                             // TODO: fight
                             Console.WriteLine("NICE");
+                        }
+                        else if (Verification.IsBossNearby(player, map, boss))
+                        {
+                            // TODO: fight
+                            Console.WriteLine("NICE BOSS");
                         }
                         endOfMovement = true;
                     }

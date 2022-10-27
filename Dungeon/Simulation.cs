@@ -5,12 +5,13 @@ namespace Dungeon
 {
     public class Simulation
     {
-        public void Move(Map map, Character player, List<Monster> monsters, CharacterManager manager)
+        public void Move(Map map, Character player, List<Monster> monsters, CharacterManager manager, Monster boss)
         {
             MapManager.SetMonstersOnMap(map, monsters);
             Display.Map(map, player);
             Display.DisplayPlayerDetails(player);
-            manager.GetPlayerMove(player, map);
+            manager.GetPlayerMove(player, map, boss);
+
             player.EatApple();
             //Console.Clear();
             

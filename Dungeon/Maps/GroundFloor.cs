@@ -5,7 +5,7 @@ namespace Dungeon.Maps
     public class GroundFloor : Map
     {
         public override string Name { get; }
-        private Random _rd = new Random();
+        private readonly Random _rd = new ();
         
         public GroundFloor()
         {
@@ -34,7 +34,7 @@ namespace Dungeon.Maps
             cave.CreateCave(FullMap, (53, 42));
         }
 
-        private void PlaceApple()
+        private void PlaceApples()
         {
             Random rd = new Random();
 
@@ -83,7 +83,7 @@ namespace Dungeon.Maps
             }
             PlaceRocks();
             PlaceCave();
-            PlaceApple();
+            PlaceApples();
             PlaceBoss();
         }
     }
