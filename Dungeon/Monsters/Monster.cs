@@ -5,7 +5,8 @@ namespace Dungeon.Monsters
     public abstract class Monster
     {
         public (int y, int x) Position { get; set; }
-        public string Name { get; }
+        public string Name { get; set; }
+        public int ID { get; set; }
         public Status Type { get; set; }
         public int Health { get; set; }
         public int AtackValue { get; set; }
