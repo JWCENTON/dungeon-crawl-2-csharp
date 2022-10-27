@@ -28,6 +28,7 @@ namespace Dungeon
         internal void GetPlayerMove(Character player, Map map)
         {
             Verification verify = new Verification();
+            Fight.Fight fight = new Fight.Fight();
             bool endOfMovement = false;
             while (!endOfMovement)
             {
@@ -62,7 +63,8 @@ namespace Dungeon
                         ChangePosition(player, direction, map);
                         if (verify.IsMonsterNearby(player, map))
                         {
-                            // TODO: fight
+                            Monster monster = verify.WhatMonsterIsNearby(map, player.Position);
+                            fight.FightWithMonster(player, monster);
                             Console.WriteLine("NICE");
                         }
                         endOfMovement = true;
