@@ -52,7 +52,7 @@ namespace Dungeon.Maps
         {
             Random rd = new Random();
 
-            var numberOfApples = 2;
+            var numberOfApples = 1;
             for (var apple = 0; apple <= numberOfApples; apple++)
             {
                 var x = rd.Next(40, 51);
