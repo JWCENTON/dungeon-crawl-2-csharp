@@ -90,35 +90,38 @@ namespace Dungeon
         {
             Verification verify = new Verification();
             var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
+            var downDirectionStatus = map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
+            var leftDirectionStatus = map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
+            var rightDirectionStatus = map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
             switch (direction)
             {
                 case Direction.Up:
-                    if (upDirectionStatus == "K")
-                    {
-                        character.Equipment.Add("K");
-                    }
-                    if (verify.DirectionUpIsWallOrChangeLevel(map, character))
+                    Equipment.CollectKey(character, upDirectionStatus);
+                    if (verify.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
                     {
                         break;
                     }
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Down:
-                    if (verify.DirectionDownIsWallOrChangeLevel(map, character))
+                    Equipment.CollectKey(character, downDirectionStatus);
+                    if (verify.DirectionDownIsWallOrChangeLevel(downDirectionStatus, character))
                     {
                         break;
                     }
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Left:
-                    if (verify.DirectionLeftIsWallOrChangeLevel(map, character))
+                    Equipment.CollectKey(character, leftDirectionStatus);
+                    if (verify.DirectionLeftIsWallOrChangeLevel(leftDirectionStatus, character))
                     {
                         break;
                     }
                     character.Position = (character.Position.y, character.Position.x);
                     break;
                 case Direction.Right:
-                    if (verify.DirectionRightIsWallOrChangeLevel(map, character))
+                    Equipment.CollectKey(character, rightDirectionStatus);
+                    if (verify.DirectionRightIsWallOrChangeLevel(rightDirectionStatus, character))
                     {
                         break;
                     }

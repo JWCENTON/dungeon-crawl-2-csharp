@@ -19,9 +19,9 @@ namespace Dungeon
             return false;
         }
 
-        public bool DirectionUpIsWallOrChangeLevel(Map map, Character character)
+        public bool DirectionUpIsWallOrChangeLevel(string direction, Character character)
         {
-            var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
+            var upDirectionStatus = direction; //map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
             var moveUp = (character.Position.y, character.Position.x - 1);
             LevelManager.CheckKeyAndChangeLevel(upDirectionStatus, character);
             if (ItIsWall(upDirectionStatus, _walls)) return false;
@@ -29,9 +29,9 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionDownIsWallOrChangeLevel(Map map, Character character)
+        public bool DirectionDownIsWallOrChangeLevel(string direction, Character character)
         {
-            var downDirectionStatus = map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
+            var downDirectionStatus = direction; //map.FullMap[character.Position.x + 1, character.Position.y].GetStatus;
             var moveDown = (character.Position.y, character.Position.x + 1);
             LevelManager.CheckKeyAndChangeLevel(downDirectionStatus, character);
             if (ItIsWall(downDirectionStatus, _walls)) return false;
@@ -39,9 +39,9 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionLeftIsWallOrChangeLevel(Map map, Character character)
+        public bool DirectionLeftIsWallOrChangeLevel(string direction, Character character)
         {
-            var leftDirectionStatus = map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
+            var leftDirectionStatus = direction; //map.FullMap[character.Position.x, character.Position.y - 1].GetStatus;
             var moveLeft = (character.Position.y - 1, character.Position.x);
             LevelManager.CheckKeyAndChangeLevel(leftDirectionStatus, character);
             if (ItIsWall(leftDirectionStatus, _walls)) return false;
@@ -49,9 +49,9 @@ namespace Dungeon
             return true;
         }
 
-        public bool DirectionRightIsWallOrChangeLevel(Map map, Character character)
+        public bool DirectionRightIsWallOrChangeLevel(string direction, Character character)
         {
-            var rightDirectionStatus = map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
+            var rightDirectionStatus = direction; //map.FullMap[character.Position.x, character.Position.y + 1].GetStatus;
             var moveRight = (character.Position.y + 1, character.Position.x);
             LevelManager.CheckKeyAndChangeLevel(rightDirectionStatus, character);
             if (ItIsWall(rightDirectionStatus, _walls)) return false;
