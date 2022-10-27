@@ -11,6 +11,7 @@ namespace Dungeon
             Display.Map(map, player);
             Display.DisplayPlayerDetails(player);
             manager.GetPlayerMove(player, map);
+            player.EatApple();
             //Console.Clear();
             Console.WriteLine("\n\n");
             MapManager.RemoveMonstersFromMap(map, monsters);

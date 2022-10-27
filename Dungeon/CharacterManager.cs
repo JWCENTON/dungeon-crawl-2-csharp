@@ -117,6 +117,7 @@ namespace Dungeon
             {
                 case Direction.Up:
                     Equipment.CollectKey(character, upDirectionStatus);
+                    Equipment.CollectApple(character, upDirectionStatus, map);
                     if (verify.DirectionUpIsWallOrChangeLevel(upDirectionStatus, character))
                     {
                         break;

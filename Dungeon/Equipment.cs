@@ -1,4 +1,7 @@
-﻿namespace Dungeon
+﻿using Dungeon.Enum;
+using Dungeon.Maps;
+
+namespace Dungeon
 {
     public class Equipment
     {
@@ -13,7 +16,7 @@
             }
         }
 
-        public static void CollectApple(Character character, string direction)
+        public static void CollectApple(Character character, string direction, Map map)
         {
             if (direction == _apple)
             {

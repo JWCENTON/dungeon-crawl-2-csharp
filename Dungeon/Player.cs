@@ -12,14 +12,22 @@ namespace Dungeon
             Type = Status.Player;
             Level = "Top floor";
             Equipment = new List<string>();
+            EatApple();
         }
 
-        public void CollectKey(string direction)
+        public override void EatApple()
         {
-            if (direction != "K")
+            var fullHealth = 100;
+            var applePower = 10;
+            if (Health < fullHealth)
             {
-                Equipment.Add("K");
+                if (Equipment.Contains("A"))
+                {
+                    Health += applePower;
+                    Equipment.Remove("A");
+                }
             }
         }
+
     }
 }
