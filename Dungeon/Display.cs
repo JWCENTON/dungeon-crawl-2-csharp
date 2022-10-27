@@ -40,7 +40,12 @@ namespace Dungeon
             string space = "     ";
             string lifeBar = new string('+', (player.Health / 10));
 
-            Console.Write($"{space}{player.Name}: Health {lifeBar} (X: {player.Position.x}, Y: {player.Position.y})");
+            Console.Write($"{space}{player.Name}: Health {lifeBar} (X: {player.Position.x}, Y: {player.Position.y}) ");
+            Console.Write($"Equipment : ");
+            foreach (var item in player.Equipment)
+            {
+                Console.Write($"{item} ");
+            }
         }
 
         public static void PlayerLevel(Character player)
