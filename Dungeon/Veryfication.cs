@@ -1,4 +1,5 @@
-﻿using Dungeon.Maps;
+﻿using Dungeon.Enum;
+using Dungeon.Maps;
 
 namespace Dungeon
 {
@@ -17,6 +18,33 @@ namespace Dungeon
             }
 
             return false;
+        }
+
+        public bool IsMonsterNearby(Character player, Map map)
+        {
+            int xCoordinate = player.Position.x;
+            int yCoordinate = player.Position.y;
+            List<string> monsterStatusList = new List<string> { "1", "2", "3" };
+
+            if (monsterStatusList.Contains(map.FullMap[xCoordinate + 1, yCoordinate].GetStatus))
+            {
+                return true;
+            }
+            else if (monsterStatusList.Contains(map.FullMap[xCoordinate - 1, yCoordinate].GetStatus))
+            {
+                return true;
+            }
+            else if (monsterStatusList.Contains(map.FullMap[xCoordinate, yCoordinate + 1].GetStatus))
+            {
+                return true;
+            }
+            else if (monsterStatusList.Contains(map.FullMap[xCoordinate, yCoordinate - 1].GetStatus))
+            {
+                return true;
+            }
+
+            return false;
+            ;
         }
 
         public bool DirectionUpIsWallOrChangeLevel(string direction, Character character)
