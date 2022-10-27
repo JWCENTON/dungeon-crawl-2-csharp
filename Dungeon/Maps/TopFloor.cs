@@ -43,6 +43,10 @@ namespace Dungeon.Maps
             cave.CreateCave(FullMap, (53, 42));
         }
 
+        private void PlaceKey()
+        {
+            FullMap[50, 50] = new Square(Status.Key);
+        }
 
         private void CreateWallsAndEmptySpace(int row, int col)
         {
@@ -77,7 +81,7 @@ namespace Dungeon.Maps
             PlaceStartIcon();
             PlaceForest();
             PlaceCave();
-            FullMap[50, 50] = new Square(Status.Key);
+            PlaceKey();
         }
     }
 }

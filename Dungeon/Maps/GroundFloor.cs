@@ -21,6 +21,11 @@ namespace Dungeon.Maps
                 var newX = _rd.Next(11, 69);
                 var newY = _rd.Next(21, 59);
                 FullMap[newX, newY] = new Square(Status.OutsideTopFloor);
+                FullMap[37, 39] = new Square(Status.OutsideTopFloor);
+                FullMap[37, 40] = new Square(Status.OutsideTopFloor);
+                FullMap[38, 39] = new Square(Status.OutsideTopFloor);
+                FullMap[38, 40] = new Square(Status.OutsideTopFloor);
+
             }
         }
         private void PlaceCave()
