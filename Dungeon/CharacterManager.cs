@@ -8,7 +8,7 @@ namespace Dungeon
     {
         public List<Monster> Monsters = new();
 
-        private List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
+        private readonly List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
         {
             ((44,23), (49,45)), ((30,23), (33,48))
         };
@@ -21,14 +21,13 @@ namespace Dungeon
 
             int xCoordinate = random.Next(area.Item1.Item1, area.Item2.Item1);
             int yCoordinate = random.Next(area.Item1.Item2, area.Item2.Item2);
-
-            Console.WriteLine($"x: {xCoordinate}   y: {yCoordinate}");
-
+            
             return (yCoordinate, xCoordinate);
         }
 
-        internal void GetPlayerMove(Character character, Map map)
+        internal void GetPlayerMove(Character player, Map map)
         {
+            Verification verify = new Verification();
             bool endOfMovement = false;
             while (!endOfMovement)
             {
@@ -60,7 +59,12 @@ namespace Dungeon
 
                     if (direction != Direction.DontMove && direction != Direction.Inventory)
                     {
-                        ChangePosition(character, direction, map);
+                        ChangePosition(player, direction, map);
+                        if (verify.IsMonsterNearby(player, map))
+                        {
+                            // TODO: fight
+                            Console.WriteLine("NICE");
+                        }
                         endOfMovement = true;
                     }
                     else if (direction == Direction.Inventory)

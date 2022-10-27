@@ -1,14 +1,22 @@
 ﻿using Dungeon.Enum;
+using Dungeon.Monsters;
 
 namespace Dungeon.Maps
 {
     public class Square
     {
         public string GetStatus { get; }
+        public Monster Monster { get; set; }
 
         public Square(Status status)
         {
             GetStatus = GetSquareStatus(status);
+        }
+
+        public Square(Status status, Monster someMonster)
+        {
+            GetStatus = GetSquareStatus(status);
+            Monster = someMonster;
         }
 
         private string GetSquareStatus(Status status)
