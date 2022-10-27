@@ -13,6 +13,7 @@ namespace Dungeon
             manager.GetPlayerMove(player, map);
             player.EatApple();
             //Console.Clear();
+            
             Console.WriteLine("\n\n");
             MapManager.RemoveMonstersFromMap(map, monsters);
         }

@@ -17,11 +17,11 @@ namespace Dungeon
             _monsters = manager.CreateListOfMonsters(3);
             
             Simulation simulation = new();
-
-            while (true)
+            var play = true;
+            while (play)
             {
                 simulation.Move(player.Level == "Top floor" ? topFloor : groundFloor, player, _monsters, manager);
-                Console.WriteLine($" eq count : {player.Equipment.Count}");
+                play = EndGame.CheckForEndGame(player);
             }
         }
     }
