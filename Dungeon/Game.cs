@@ -15,7 +15,6 @@ namespace Dungeon
             Character player = new Player();
             CharacterManager manager = new CharacterManager();
             _monsters = manager.CreateListOfMonsters(1);
-            
             Simulation simulation = new();
 
             while (true)

@@ -4,6 +4,25 @@ namespace Dungeon
 {
     public class Display
     {
+        private static void PLayerHealthAndPosition(Character player)
+        {
+            string space = "     ";
+            string lifeBar = new string('+', (player.Health / 10));
+
+            Console.Write($"{space}{player.Name}: Health {lifeBar} (X: {player.Position.x}, Y: {player.Position.y}) ");
+        }
+
+        private static void PlayerEquipment(Character player)
+        {
+            Console.Write($"Equipment : ");
+            foreach (var item in player.Equipment)
+            {
+                if (item == "K")
+                {
+                    Console.Write($"Key | ");
+                }
+            }
+        }
         public static void Map(Map map, Character player)
         {
             string space = "     ";
@@ -34,24 +53,11 @@ namespace Dungeon
             
             Console.WriteLine($"\t{map.Name}");
         }
-
-        public static void PLayerPosition(Character player)
+        
+        public static void DisplayPlayerDetails(Character player)
         {
-            string space = "     ";
-            string lifeBar = new string('+', (player.Health / 10));
-
-            Console.Write($"{space}{player.Name}: Health {lifeBar} (X: {player.Position.x}, Y: {player.Position.y}) ");
-            Console.Write($"Equipment : ");
-            foreach (var item in player.Equipment)
-            {
-                if (item == "K")
-                Console.Write($"Key ");
-            }
-        }
-
-        public static void PlayerLevel(Character player)
-        {
-            Console.WriteLine($"{player.Level}");
+            PLayerHealthAndPosition(player);
+            PlayerEquipment(player);
         }
 
     }
