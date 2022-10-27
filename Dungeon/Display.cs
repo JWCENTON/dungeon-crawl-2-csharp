@@ -44,7 +44,8 @@ namespace Dungeon
             Console.Write($"Equipment : ");
             foreach (var item in player.Equipment)
             {
-                Console.Write($"{item} ");
+                if (item == "K")
+                Console.Write($"Key ");
             }
         }
 
