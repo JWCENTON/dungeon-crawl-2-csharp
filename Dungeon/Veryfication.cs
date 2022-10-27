@@ -19,21 +19,6 @@ namespace Dungeon
             return false;
         }
 
-        //private void RemoveKeyFromEquipment(Character character)
-        //{
-        //    var key = "K";
-        //    var keyIndex = character.Equipment.IndexOf(key);
-        //    character.Equipment.RemoveAt(keyIndex);
-        //}
-        //private void CheckKeyAndChangeLevel(string directionStatus, Character character)
-        //{
-        //    var entrance = 5;
-        //    if (character.Equipment.Contains("K") && directionStatus == _walls[entrance])
-        //    {
-        //        character.Level = character.Level == "Top floor" ? "Ground floor" : "Top floor";
-        //        RemoveKeyFromEquipment(character);
-        //    }
-        //}
         public bool DirectionUpIsWallOrChangeLevel(Map map, Character character)
         {
             var upDirectionStatus = map.FullMap[character.Position.x - 1, character.Position.y].GetStatus;
