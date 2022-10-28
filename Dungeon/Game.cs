@@ -24,7 +24,7 @@ namespace Dungeon
             while (play)
             {
                 simulation.Move(player.Level == "Top floor" ? topFloor : groundFloor, player, _monsters, manager, boss);
-                play = EndGame.CheckForEndGame(player);
+                play = EndGame.CheckForEndGame(player, (Boss)boss);
             }
         }
     }

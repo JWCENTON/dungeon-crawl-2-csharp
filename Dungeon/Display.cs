@@ -1,4 +1,5 @@
-﻿using Dungeon.Maps;
+﻿using System.Net.NetworkInformation;
+using Dungeon.Maps;
 
 namespace Dungeon
 {
@@ -71,9 +72,14 @@ namespace Dungeon
             ShowLegend(player);
         }
 
-        public static void EndGame()
+        public static void EndGameLost()
         {
-            Console.WriteLine("\n\n\n\tGAME OVER\n\n\n");
+            Console.WriteLine("\n\n\n\tGAME OVER LOST\n\n\n");
+        }
+
+        public static void EndGameWon()
+        {
+            Console.WriteLine("\n\n\n\tGAME OVER WON\n\n\n");
         }
     }
 }
