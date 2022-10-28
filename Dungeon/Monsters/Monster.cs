@@ -13,7 +13,7 @@ namespace Dungeon.Monsters
         public string TypeAtack { get; set; }
         public Item Item { get; set; }
         public bool IsAlive { get; set; }
-        public int MapLevel {get; set; }
+        public virtual int MapLevel {get; }
         internal int SetMonsterIntValue(int minHealth, int maxHealth)
         {
             Random random = new Random();

@@ -9,6 +9,7 @@ namespace Dungeon.Monsters
 {
     public class Boss : Monster
     {
+        public override int MapLevel { get; }
         public Boss((int, int) startedPosition)
         {
             Name = "BOSS";
@@ -20,7 +21,7 @@ namespace Dungeon.Monsters
             this.Item = new Item("Claw");
             IsAlive = true;
             Type = Status.Boss;
+            MapLevel = 2;
         }
-
     }
 }
