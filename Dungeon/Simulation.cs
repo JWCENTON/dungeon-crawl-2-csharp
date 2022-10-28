@@ -10,11 +10,10 @@ namespace Dungeon
             MapManager.SetMonstersOnMap(map, monsters);
             Display.Map(map, player);
             Display.DisplayPlayerDetails(player);
+            Equipment.ShowEquipment(player);
             manager.GetPlayerMove(player, map);
-
             player.EatApple();
             //Console.Clear();
-            
             Console.WriteLine("\n\n");
             MapManager.RemoveMonstersFromMap(map, monsters);
         }

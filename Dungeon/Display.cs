@@ -4,6 +4,10 @@ namespace Dungeon
 {
     public class Display
     {
+        private static void ShowLegend(Character player)
+        {
+            Console.WriteLine(" Press E to see equipment ");
+        }
         private static void PLayerHealthAndPosition(Character player)
         {
             string space = "     ";
@@ -12,11 +16,11 @@ namespace Dungeon
             Console.Write($"{space}{player.Name}: Health {lifeBar}({lifeBar.Length} out of 10) (Y: {player.Position.x}, X: {player.Position.y}) ");
         }
 
-        private static void PlayerEquipment(Character player)
+        public static void PlayerEquipment(Character player)
         {
             var keySign = "K";
             var appleSign = "A";
-            Console.Write($"Equipment : ");
+            Console.Write($"\tEquipment : ");
             foreach (var item in player.Equipment)
             {
                 if (item == keySign)
@@ -63,7 +67,7 @@ namespace Dungeon
         public static void DisplayPlayerDetails(Character player)
         {
             PLayerHealthAndPosition(player);
-            PlayerEquipment(player);
+            ShowLegend(player);
         }
 
         public static void EndGame()

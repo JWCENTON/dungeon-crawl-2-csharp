@@ -71,6 +71,14 @@ namespace Dungeon
                     }
                     else if (direction == Direction.Inventory)
                     {
+                        if (player.ShowEquipment == false)
+                        {
+                            player.ShowEquipment = true;
+                        }
+                        else
+                        {
+                            player.ShowEquipment = false;
+                        }
                         endOfMovement = true;
                     }
                 }

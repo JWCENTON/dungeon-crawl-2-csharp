@@ -14,6 +14,7 @@ namespace Dungeon
             Level = "Top floor";
             Equipment = new List<string>();
             AtackValue = 10;
+            ShowEquipment = false;
             EatApple();
         }
 
@@ -31,6 +32,5 @@ namespace Dungeon
                 }
             }
         }
-
     }
 }

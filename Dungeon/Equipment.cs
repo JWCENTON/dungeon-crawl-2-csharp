@@ -29,5 +29,13 @@ namespace Dungeon
             CollectKey(character, direction);
             CollectApple(character, direction, map);
         }
+
+        public static void ShowEquipment(Character player)
+        {
+            if (player.ShowEquipment == true)
+            {
+                Display.PlayerEquipment(player);
+            }
+        }
     }
 }
