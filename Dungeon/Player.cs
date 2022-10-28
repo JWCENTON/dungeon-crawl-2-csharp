@@ -9,11 +9,10 @@ namespace Dungeon
             Position = (21, 11); // 21, 11
             Name = "Alice";
             Health = 90;
-            AtackValue = 25;
+            AtackValue = 10;
             Type = Status.Player;
             Level = "Top floor";
             Equipment = new List<string>();
-            AtackValue = 10;
             ShowEquipment = false;
             EatApple();
         }

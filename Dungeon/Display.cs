@@ -6,7 +6,7 @@ namespace Dungeon
     {
         private static void ShowLegend(Character player)
         {
-            Console.WriteLine(" Press E to show equipment ");
+            Console.WriteLine("\tPress E to show equipment ");
         }
         private static void PLayerHealthAndPosition(Character player)
         {
@@ -14,6 +14,7 @@ namespace Dungeon
             string lifeBar = new string('+', (player.Health / 10));
 
             Console.Write($"{space}{player.Name}: Health {lifeBar}({lifeBar.Length} out of 10) (Y: {player.Position.x}, X: {player.Position.y}) ");
+            Console.WriteLine($" Attack strength: {player.AtackValue}");
         }
 
         public static void PlayerEquipment(Character player)
