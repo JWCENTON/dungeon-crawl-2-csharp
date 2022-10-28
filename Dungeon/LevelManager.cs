@@ -20,7 +20,7 @@ namespace Dungeon
             if (character.Equipment.Contains("K") && directionStatus == entrance)
             {
                 character.Level = character.Level == "Top floor" ? "Ground floor" : "Top floor";
-                RemoveKeyFromEquipment(character);
+                //RemoveKeyFromEquipment(character);
             }
         }
     }
