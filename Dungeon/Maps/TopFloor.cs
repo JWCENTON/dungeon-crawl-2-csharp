@@ -5,11 +5,13 @@ namespace Dungeon.Maps
     public class TopFloor : Map
     {
         public override string Name { get; }
+        public override int MapLevel { get; }
 
         public TopFloor()
         {
             Name = "Top floor";
             CreateMap();
+            MapLevel = 1;
         }
         private void PlaceStartIcon()
         {

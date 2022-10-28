@@ -7,11 +7,13 @@ namespace Dungeon.Maps
     {
         public override string Name { get; }
         private readonly Random _rd = new ();
+        public override int MapLevel { get; }
         
         public GroundFloor()
         {
             Name = "Ground floor";
             CreateMap();
+            MapLevel = 2;
         }
 
         private void PlaceRocks()
