@@ -6,7 +6,7 @@ namespace Dungeon
     {
         private static void ShowLegend(Character player)
         {
-            Console.WriteLine(" Press E to see equipment ");
+            Console.WriteLine(" Press E to show equipment ");
         }
         private static void PLayerHealthAndPosition(Character player)
         {
