@@ -16,6 +16,7 @@ namespace Dungeon.Monsters
             this.Item = new Item("Claw");
             IsAlive = true;
             Type = Status.Monster1;
+            MapLevel = 1;
         }
     }
 }
