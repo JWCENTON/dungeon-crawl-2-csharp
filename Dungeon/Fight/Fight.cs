@@ -17,7 +17,7 @@ namespace Dungeon.Fight
                 {
                     isFightContinues = false;
                     correctStatusAliveChar(player);
-                    correctStatusAliveMonster(monster);
+                    correctStatusAliveMonster(monster, player);
                 }
             }
         }
@@ -29,11 +29,12 @@ namespace Dungeon.Fight
                 player.IsAlive = false;
             }
         }
-        private void correctStatusAliveMonster(Monster monster)
+        private void correctStatusAliveMonster(Monster monster, Character player)
         {
             if (monster.Health <= 0)
             {
                 monster.IsAlive = false;
+                player.AtackValue += 10;
             }
         }
     }

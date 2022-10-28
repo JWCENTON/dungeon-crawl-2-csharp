@@ -10,7 +10,7 @@ namespace Dungeon
     {
         public static bool CheckForEndGame(Character player)
         {
-            if (player.Health <= 0)
+            if (player.Health <= 1)
             {
                 Display.EndGame();
                 return false;
