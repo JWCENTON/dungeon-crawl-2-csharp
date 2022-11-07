@@ -87,7 +87,7 @@ namespace Dungeon.Maps
             PlaceRocks();
             PlaceCave();
             PlaceApples();
-            PlaceBoss();
+            //PlaceBoss(); for testing only
         }
     }
 }
