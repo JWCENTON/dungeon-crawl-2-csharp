@@ -11,6 +11,7 @@ namespace Dungeon.Fight
             while (isFightContinues)
             {
                 player.Health -= monster.AtackValue;
+                player.AtackValue += 10;
                 monster.Health -= player.AtackValue;
 
                 if (player.Health <= 0 || monster.Health <= 0)
