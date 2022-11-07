@@ -1,34 +1,49 @@
-﻿using System.ComponentModel;
-using Dungeon.Enum;
+﻿using Dungeon.Enum;
 using Dungeon.Maps;
 using Dungeon.Monsters;
+using System.Numerics;
 using System.Threading;
 
 namespace Dungeon.Fight
 {
     public class Fight
     {
-        public void FightBoss(Character player, Map map)
+        private void DisplayFight(FileReader.FileReader shield, Character player, Monster boss)
         {
-            map.FullMap[44, 44] = new Square(Status.Empty);
-            map.FullMap[44, 45] = new Square(Status.Empty);
-            map.FullMap[44, 45] = new Square(Status.Empty);
-            Console.WriteLine("A for ATTACK or C to quit fight"); // TODO Boss fight in turns!
-            //var a = Console.Read();
+            foreach (var line in shield.Read())
+            {
+                Console.Write($"{line}");
+            }
+            Console.WriteLine($"\tBoos health: {boss.Health} Attack: {boss.AtackValue} | {player.Name} health: {player.Health} | {player.Name} Attack: {player.AtackValue}");
+            Console.WriteLine("\tA for ATTACK or Q to quit fight"); // TODO Boss fight in turns!
+        }
+
+        public void FightBoss(Character player, Map map, Monster boss)
+        {
+            var shield = new FileReader.FileReader(Path.GetFullPath(Path.Combine(System.AppContext.BaseDirectory, "shield.txt")));
+            DisplayFight(shield, player, boss);
             bool endFight = false;
             while (!endFight)
             {
                 if (Console.KeyAvailable)
                 {
-                    FightOption fightOption;
                     ConsoleKeyInfo key = Console.ReadKey(true);
                     switch (key.Key)
                     {
                         case ConsoleKey.A:
-                            fightOption = FightOption.attack;
-                            Console.WriteLine("YESS ATTACK ");
+                            Console.Clear();
+                            player.Health -= boss.AtackValue;
+                            boss.Health -= player.AtackValue;
+                            boss.AtackValue += 1;
+                            if (player.Health <= 0 || boss.Health <= 0)
+                            {
+                                endFight = true;
+                                correctStatusAlive(player);
+                                correctStatusAlive(boss);
+                            }
+                            DisplayFight(shield, player, boss);
                             break;
-                        case ConsoleKey.C:
+                        case ConsoleKey.Q:
                             endFight = true;
                             break;
                     }

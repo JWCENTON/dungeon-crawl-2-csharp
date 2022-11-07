@@ -1,4 +1,6 @@
-﻿using Dungeon.Enum;
+﻿using System.Data;
+using System.Runtime.CompilerServices;
+using Dungeon.Enum;
 using Dungeon.Maps;
 using Dungeon.Monsters;
 using System.Threading;
@@ -64,20 +66,20 @@ namespace Dungeon
 
                     if (direction != Direction.DontMove && direction != Direction.Inventory)
                     {
+                        string answer;
                         ChangePosition(player, direction, map);
                         if (verify.IsMonsterNearby(player, map))
                         {
                             Monster monster = verify.WhatMonsterIsNearby(map, player.Position);
                             if (monster.Type == Status.Boss)
                             {
-                                map.FullMap[44, 44] = new Square(Status.Entrance);
-                                map.FullMap[44, 45] = new Square(Status.Entrance);
-
-                                map.FullMap[44, 45] = new Square(Status.Question);
-                                if (direction == Direction.Fight)
+                                Console.Clear();
+                                Console.Write("\n\n\n\t\t\tDo you want to fight the BOSS (y)? ");
+                                answer = Console.ReadLine().ToLower();
+                                Console.Clear();
+                                if (answer == "y")
                                 {
-                                    fight.FightBoss(player, map);
-                                    //direction = Direction.Fight;
+                                    fight.FightBoss(player, map, monster);
                                 }
                             }
                             else
@@ -85,6 +87,7 @@ namespace Dungeon
                                 fight.FightWithMonster(player, monster);
                             }
                         }
+                        
                         endOfMovement = true;
                     }
                     else if (direction == Direction.Inventory)

@@ -15,8 +15,8 @@ namespace Dungeon.Monsters
             Name = "BOSS";
             //ID = count++;
             Position = startedPosition;
-            Health = 100;
-            AtackValue = SetMonsterIntValue(4, 8);
+            Health = 150;
+            AtackValue = SetMonsterIntValue(10, 15);
             TypeAtack = "Beat";
             this.Item = new Item("Claw");
             IsAlive = true;

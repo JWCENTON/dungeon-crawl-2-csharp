@@ -88,10 +88,6 @@ namespace Dungeon.Maps
             {
                 return "B";
             }
-            else if (status == Status.Question)
-            {
-                return "Do you want to fight?";
-            }
             else
             {
                 return " ";

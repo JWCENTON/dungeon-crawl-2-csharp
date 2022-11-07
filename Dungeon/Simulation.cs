@@ -13,7 +13,7 @@ namespace Dungeon
             Equipment.ShowEquipment(player);
             manager.GetPlayerMove(player, map);
             player.EatApple();
-            //Console.Clear();
+            Console.Clear();
             Console.WriteLine("\n\n");
             MapManager.RemoveMonstersFromMap(map, monsters);
         }
