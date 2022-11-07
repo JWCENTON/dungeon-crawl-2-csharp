@@ -75,12 +75,12 @@ namespace Dungeon
 
         public static void EndGameLost()
         {
-            Console.WriteLine("\n\n\n\tGAME OVER LOST\n\n\n");
+            Console.WriteLine("\n\n\n\tGAME OVER - YOU LOST\n\n\n");
         }
 
         public static void EndGameWon()
         {
-            Console.WriteLine("\n\n\n\tGAME OVER WON\n\n\n");
+            Console.WriteLine("\n\n\n\tGAME OVER - YOU WON\n\n\n");
         }
 
         public static void BossStatics(Monster boss)

@@ -98,7 +98,7 @@ namespace Dungeon
                 case Status.Monster1:
                     return new Wolf(GetMonsterPosition());
                 case Status.Boss:
-                    return new Boss(GetMonsterPosition());
+                    return new Boss((45, 45));
             }
             // TODO: throw error (not exist monster)
 
@@ -108,7 +108,7 @@ namespace Dungeon
         public List<Monster> CreateListOfMonsters(int quantity)
         {
             List<Monster> monsters = new List<Monster>();
-            List<Status> monsterStatusList = new List<Status> {Status.Monster1, Status.Boss}; //TODO: Add more monsters type
+            List<Status> monsterStatusList = new List<Status> {Status.Monster1}; //TODO: Add more monsters type
             Random r = new Random();
 
             for (int i = 0; i < quantity; i++)

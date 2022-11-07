@@ -1,4 +1,6 @@
-﻿using Dungeon.Maps;
+﻿using System.Runtime.InteropServices;
+using Dungeon.Enum;
+using Dungeon.Maps;
 using Dungeon.Monsters;
 
 namespace Dungeon
@@ -13,12 +15,14 @@ namespace Dungeon
             Map groundFloor = new GroundFloor();
 
             Character player = new Player();
-            Monster boss = new Boss((21, 51));
+            //Monster boss = new Boss((21, 51));
 
             CharacterManager manager = new CharacterManager();
 
             _monsters = manager.CreateListOfMonsters(3);
-            
+            var boss = manager.CreateMonster(Status.Boss);
+            _monsters.Add(boss);
+
             Simulation simulation = new();
             var play = true;
             while (play)
