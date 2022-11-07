@@ -71,6 +71,10 @@ namespace Dungeon
             {
                 monster = map.FullMap[xCoordinate, yCoordinate - 1].Monster;
             }
+            else if (monsterStatusList.Contains(map.FullMap[xCoordinate, yCoordinate].GetStatus))
+            {
+                monster = map.FullMap[xCoordinate, yCoordinate].Monster;
+            }
 
             return monster;
         }

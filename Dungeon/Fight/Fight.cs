@@ -14,8 +14,8 @@ namespace Dungeon.Fight
             {
                 Console.Write($"{line}");
             }
-            Console.WriteLine($"\tBoos health: {boss.Health} Attack: {boss.AtackValue} | {player.Name} health: {player.Health} | {player.Name} Attack: {player.AtackValue}");
-            Console.WriteLine("\tA for ATTACK or Q to quit fight"); // TODO Boss fight in turns!
+            Console.WriteLine($"\tBoos health: {boss.Health} Boss Attack: {boss.AtackValue} | {player.Name} health: {player.Health} {player.Name} Attack: {player.AtackValue}");
+            Console.WriteLine("\tA for ATTACK or Q to quit fight");
         }
 
         public void FightBoss(Character player, Map map, Monster boss)
