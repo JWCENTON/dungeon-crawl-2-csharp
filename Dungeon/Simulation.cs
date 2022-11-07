@@ -9,6 +9,7 @@ namespace Dungeon
     {
         public void Move(Map map, Character player, List<Monster> monsters, CharacterManager manager, Monster boss)
         {
+            Console.Clear();
             MapManager.SetMonstersOnMap(map, monsters);
             Display.Map(map, player);
             Display.DisplayPlayerDetails(player, boss);
@@ -16,9 +17,9 @@ namespace Dungeon
             manager.GetPlayerMove(player, map);
             manager.GetBossMove(boss, map);
             player.EatApple();
-            Console.Clear();
             Console.WriteLine("\n\n");
             MapManager.RemoveMonstersFromMap(map, monsters);
+            Console.Clear();
         }
     }
 }

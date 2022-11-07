@@ -27,19 +27,20 @@ namespace Dungeon.Maps
 
             FullMap[35, 37] = new Square(Status.UpDownWall);
             FullMap[35, 38] = new Square(Status.UpDownWall);
+
             FullMap[35, 41] = new Square(Status.UpDownWall);
             FullMap[35, 42] = new Square(Status.UpDownWall);
 
 
-            FullMap[32, 43] = new Square(Status.SideWall);
-            FullMap[33, 43] = new Square(Status.SideWall);
-            FullMap[34, 43] = new Square(Status.SideWall);
-            FullMap[35, 43] = new Square(Status.SideWall);
+            FullMap[32, 43] = new Square(Status.CaveRightWall);
+            FullMap[33, 43] = new Square(Status.CaveLeftWall);
+            FullMap[34, 43] = new Square(Status.CaveRightWall);
+            FullMap[35, 43] = new Square(Status.CaveLeftWall);
 
-            FullMap[32, 36] = new Square(Status.SideWall);
-            FullMap[33, 36] = new Square(Status.SideWall);
-            FullMap[34, 36] = new Square(Status.SideWall);
-            FullMap[35, 36] = new Square(Status.SideWall);
+            FullMap[32, 36] = new Square(Status.CaveRightWall);
+            FullMap[33, 36] = new Square(Status.CaveLeftWall);
+            FullMap[34, 36] = new Square(Status.CaveRightWall);
+            FullMap[35, 36] = new Square(Status.CaveLeftWall);
         }
 
         private void PlaceRocks()

@@ -17,9 +17,9 @@ namespace Dungeon
             Character player = new Alice();
 
             CharacterManager manager = new CharacterManager();
-
-            _monsters = manager.CreateListOfMonsters(3);
             var boss = manager.CreateMonster(Status.Boss);
+            _monsters = manager.CreateListOfMonsters(3);
+
             _monsters.Add(boss);
 
             Simulation simulation = new();

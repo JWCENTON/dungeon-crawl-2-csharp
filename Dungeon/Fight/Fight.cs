@@ -56,11 +56,10 @@ namespace Dungeon.Fight
         public void FightWithMonster(Character player, Monster monster)
         {
             var isFightContinues = true;
-
+            player.AtackValue += 10;
             while (isFightContinues)
             {
                 player.Health -= monster.AtackValue;
-                player.AtackValue += 10;
                 monster.Health -= player.AtackValue;
 
                 if (player.Health <= 0 || monster.Health <= 0)
