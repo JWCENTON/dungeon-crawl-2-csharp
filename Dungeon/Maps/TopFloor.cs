@@ -13,6 +13,7 @@ namespace Dungeon.Maps
             CreateMap();
             MapLevel = 1;
         }
+
         private void PlaceStartIcon()
         {
             FullMap[10, 20] = new Square(Status.Start);

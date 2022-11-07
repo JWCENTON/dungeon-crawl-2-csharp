@@ -18,6 +18,7 @@
         Entrance,
         Key,
         Apple, 
-        Boss
+        Boss,
+        Question
     }
 }

@@ -7,6 +7,7 @@
         Right,
         Left,
         Inventory,
-        DontMove
+        DontMove,
+        Fight
     }
 }

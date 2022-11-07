@@ -1,6 +1,7 @@
 ﻿using Dungeon.Enum;
 using Dungeon.Maps;
 using Dungeon.Monsters;
+using System.Threading;
 
 namespace Dungeon
 {
@@ -53,6 +54,9 @@ namespace Dungeon
                         case ConsoleKey.E:
                             direction = Direction.Inventory;
                             break;
+                        case ConsoleKey.F:
+                            direction = Direction.Fight;
+                            break;
                         default:
                             direction = Direction.DontMove;
                             break;
@@ -66,7 +70,15 @@ namespace Dungeon
                             Monster monster = verify.WhatMonsterIsNearby(map, player.Position);
                             if (monster.Type == Status.Boss)
                             {
-                                fight.FightBoss(player, monster);
+                                map.FullMap[44, 44] = new Square(Status.Entrance);
+                                map.FullMap[44, 45] = new Square(Status.Entrance);
+
+                                map.FullMap[44, 45] = new Square(Status.Question);
+                                if (direction == Direction.Fight)
+                                {
+                                    fight.FightBoss(player, map);
+                                    //direction = Direction.Fight;
+                                }
                             }
                             else
                             {
