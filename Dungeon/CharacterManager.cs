@@ -6,7 +6,7 @@ namespace Dungeon
 {
     public class CharacterManager
     {
-        public List<Monster> Monsters = new();
+        //public List<Monster> Monsters = new();
 
         private readonly List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
         {
@@ -85,10 +85,10 @@ namespace Dungeon
             }
         }
 
-        public void AddToListMonsters(Monster monster)
-        {
-            Monsters.Add(monster);
-        }
+        //public void AddToListMonsters(Monster monster)
+        //{
+        //    Monsters.Add(monster);
+        //}
 
         public Monster CreateMonster(Status typeOfMonster)
         {
@@ -97,6 +97,8 @@ namespace Dungeon
             {
                 case Status.Monster1:
                     return new Wolf(GetMonsterPosition());
+                case Status.Boss:
+                    return new Boss((45, 45));
             }
             // TODO: throw error (not exist monster)
 

@@ -1,6 +1,7 @@
 ﻿using System.Net.NetworkInformation;
 using System.Text;
 using Dungeon.Maps;
+using Dungeon.Monsters;
 
 namespace Dungeon
 {
@@ -10,13 +11,13 @@ namespace Dungeon
         {
             Console.WriteLine("\tPress E to show equipment ");
         }
-        private static void PLayerHealthAndPosition(Character player)
+        private static void PLayerHealthAndPosition(Character player, Monster boss)
         {
             string space = "     ";
             string lifeBar = new string('+', (player.Health / 10));
 
             Console.Write($"{space}{player.Name}: Health {lifeBar}({lifeBar.Length} out of 10) (Y: {player.Position.x}, X: {player.Position.y}) ");
-            Console.WriteLine($" Attack strength: {player.AtackValue}");
+            Console.WriteLine($" Attack strength: {player.AtackValue} BOSS health: {boss.Health}");
         }
 
         public static void PlayerEquipment(Character player)
@@ -68,20 +69,25 @@ namespace Dungeon
             Console.WriteLine($"\t{map.Name}");
         }
         
-        public static void DisplayPlayerDetails(Character player)
+        public static void DisplayPlayerDetails(Character player, Monster boss)
         {
-            PLayerHealthAndPosition(player);
+            PLayerHealthAndPosition(player, boss);
             ShowLegend(player);
         }
 
         public static void EndGameLost()
         {
-            Console.WriteLine("\n\n\n\tGAME OVER LOST\n\n\n");
+            Console.WriteLine("\n\n\n\tGAME OVER - YOU LOST\n\n\n");
         }
 
         public static void EndGameWon()
         {
-            Console.WriteLine("\n\n\n\tGAME OVER WON\n\n\n");
+            Console.WriteLine("\n\n\n\tGAME OVER - YOU WON\n\n\n");
+        }
+
+        public static void BossStatics(Monster boss)
+        {
+            Console.WriteLine($"\n{boss.Health}");
         }
     }
 }
