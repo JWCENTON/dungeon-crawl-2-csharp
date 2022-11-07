@@ -56,7 +56,6 @@ namespace Dungeon.Fight
         public void FightWithMonster(Character player, Monster monster)
         {
             var isFightContinues = true;
-            player.AtackValue += 10;
             while (isFightContinues)
             {
                 player.Health -= monster.AtackValue;
@@ -69,6 +68,7 @@ namespace Dungeon.Fight
                     correctStatusAlive(monster);
                 }
             }
+            player.AtackValue += 10;
         }
 
         private void correctStatusAlive(IHealth arg)

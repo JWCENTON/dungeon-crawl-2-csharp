@@ -18,7 +18,7 @@ namespace Dungeon
 
             CharacterManager manager = new CharacterManager();
             var boss = manager.CreateMonster(Status.Boss);
-            _monsters = manager.CreateListOfMonsters(3);
+            _monsters = manager.CreateListOfMonsters(10);
 
             _monsters.Add(boss);
 
