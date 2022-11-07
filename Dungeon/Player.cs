@@ -2,9 +2,9 @@
 
 namespace Dungeon
 {
-    public class Player : Character
+    public class Alice : Character
     {
-        public Player()
+        public Alice()
         {
             Position = (21, 11); // 21, 11
             Name = "Alice";

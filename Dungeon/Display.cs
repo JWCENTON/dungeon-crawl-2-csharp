@@ -1,4 +1,5 @@
 ﻿using System.Net.NetworkInformation;
+using System.Text;
 using Dungeon.Maps;
 
 namespace Dungeon
@@ -37,6 +38,7 @@ namespace Dungeon
         }
         public static void Map(Map map, Character player)
         {
+            Console.OutputEncoding = Encoding.Unicode;
             string space = "     ";
             MapManager.PutObjectOnMap(map, player.Position, player.Type);
             MapName(map);

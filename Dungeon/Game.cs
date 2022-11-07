@@ -12,7 +12,7 @@ namespace Dungeon
             Map topFloor = new TopFloor();
             Map groundFloor = new GroundFloor();
 
-            Character player = new Player();
+            Character player = new Alice();
             Monster boss = new Boss((21, 51));
 
             CharacterManager manager = new CharacterManager();

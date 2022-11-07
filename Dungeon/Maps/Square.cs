@@ -54,7 +54,7 @@ namespace Dungeon.Maps
             }
             else if (status == Status.Monster1)
             {
-                return "1";
+                return "W";
             }
             else if (status == Status.Monster2)
             {

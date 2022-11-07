@@ -25,7 +25,7 @@ namespace Dungeon
         {
             int xCoordinate = player.Position.x;
             int yCoordinate = player.Position.y;
-            List<string> monsterStatusList = new List<string> { "1", "2", "3", "B" };
+            List<string> monsterStatusList = new List<string> { "W", "2", "3", "B" };
 
             if (monsterStatusList.Contains(map.FullMap[xCoordinate + 1, yCoordinate].GetStatus))
             {
@@ -50,7 +50,7 @@ namespace Dungeon
 
         public Monster WhatMonsterIsNearby(Map map, (int, int) position)
         {
-            List<string> monsterStatusList = new List<string> { "1", "2", "3", "B" };
+            List<string> monsterStatusList = new List<string> { "W", "2", "3", "B" };
             int yCoordinate = position.Item1;
             int xCoordinate = position.Item2;
             Monster monster = null;
