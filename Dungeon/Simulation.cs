@@ -1,4 +1,6 @@
-﻿using Dungeon.Maps;
+﻿using System.Runtime.InteropServices;
+using Dungeon.Enum;
+using Dungeon.Maps;
 using Dungeon.Monsters;
 
 namespace Dungeon
@@ -12,6 +14,7 @@ namespace Dungeon
             Display.DisplayPlayerDetails(player, boss);
             Equipment.ShowEquipment(player);
             manager.GetPlayerMove(player, map);
+            manager.GetBossMove(boss, map);
             player.EatApple();
             Console.Clear();
             Console.WriteLine("\n\n");

@@ -16,6 +16,32 @@ namespace Dungeon.Maps
             MapLevel = 2;
         }
 
+        private void PlaceBossCave()
+        {
+            FullMap[32, 37] = new Square(Status.UpDownWall);
+            FullMap[32, 38] = new Square(Status.UpDownWall);
+            FullMap[32, 39] = new Square(Status.UpDownWall);
+            FullMap[32, 40] = new Square(Status.UpDownWall);
+            FullMap[32, 41] = new Square(Status.UpDownWall);
+            FullMap[32, 42] = new Square(Status.UpDownWall);
+
+            FullMap[35, 37] = new Square(Status.UpDownWall);
+            FullMap[35, 38] = new Square(Status.UpDownWall);
+            FullMap[35, 41] = new Square(Status.UpDownWall);
+            FullMap[35, 42] = new Square(Status.UpDownWall);
+
+
+            FullMap[32, 43] = new Square(Status.SideWall);
+            FullMap[33, 43] = new Square(Status.SideWall);
+            FullMap[34, 43] = new Square(Status.SideWall);
+            FullMap[35, 43] = new Square(Status.SideWall);
+
+            FullMap[32, 36] = new Square(Status.SideWall);
+            FullMap[33, 36] = new Square(Status.SideWall);
+            FullMap[34, 36] = new Square(Status.SideWall);
+            FullMap[35, 36] = new Square(Status.SideWall);
+        }
+
         private void PlaceRocks()
         {
             var totalRocks = 50;
@@ -24,12 +50,11 @@ namespace Dungeon.Maps
                 var newX = _rd.Next(11, 69);
                 var newY = _rd.Next(21, 59);
                 FullMap[newX, newY] = new Square(Status.OutsideTopFloor);
-                FullMap[37, 39] = new Square(Status.OutsideTopFloor);
-                FullMap[37, 40] = new Square(Status.OutsideTopFloor);
-                FullMap[38, 39] = new Square(Status.OutsideTopFloor);
-                FullMap[38, 40] = new Square(Status.OutsideTopFloor);
-
             }
+            FullMap[37, 39] = new Square(Status.OutsideTopFloor);
+            FullMap[37, 40] = new Square(Status.OutsideTopFloor);
+            FullMap[38, 39] = new Square(Status.OutsideTopFloor);
+            FullMap[38, 40] = new Square(Status.OutsideTopFloor);
         }
         private void PlaceCave()
         {
@@ -41,7 +66,7 @@ namespace Dungeon.Maps
         {
             Random rd = new Random();
 
-            var numberOfApples = 1;
+            var numberOfApples = 5;
             for (var apple = 0; apple <= numberOfApples; apple++)
             {
                 var x = rd.Next(40, 51);
@@ -51,13 +76,7 @@ namespace Dungeon.Maps
             FullMap[12, 24] = new Square(Status.Apple);
             FullMap[11, 54] = new Square(Status.Apple);
         }
-
-        private void PlaceBoss()
-        {
-            FullMap[21, 31] = new Square(Status.Boss, new Boss((21, 31)));
-            FullMap[21, 32] = new Square(Status.Boss, new Boss((21, 31)));
-        }
-
+        
         public void CreateMap()
         {
             for (var i = 0; i < Width; i++)
@@ -87,7 +106,7 @@ namespace Dungeon.Maps
             PlaceRocks();
             PlaceCave();
             PlaceApples();
-            //PlaceBoss(); for testing only
+            PlaceBossCave();
         }
     }
 }

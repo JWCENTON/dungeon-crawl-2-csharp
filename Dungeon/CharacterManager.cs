@@ -106,10 +106,19 @@ namespace Dungeon
             }
         }
 
-        //public void AddToListMonsters(Monster monster)
-        //{
-        //    Monsters.Add(monster);
-        //}
+        public void GetBossMove(Monster boss, Map map)
+        {
+            if (boss.Position == (39, 33))
+            {
+                map.FullMap[33, 39] = new Square(Status.Empty);
+                boss.Position = (40, 33);
+            }
+            else
+            {
+                map.FullMap[33, 40] = new Square(Status.Empty);
+                boss.Position = (39, 33);
+            }
+        }
 
         public Monster CreateMonster(Status typeOfMonster)
         {
@@ -119,7 +128,7 @@ namespace Dungeon
                 case Status.Monster1:
                     return new Wolf(GetMonsterPosition());
                 case Status.Boss:
-                    return new Boss((45, 45));
+                    return new Boss((39, 33));
             }
             // TODO: throw error (not exist monster)
 
