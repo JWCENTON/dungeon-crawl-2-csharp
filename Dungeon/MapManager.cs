@@ -41,7 +41,6 @@ namespace Dungeon
                 {
                     PutMonsterOnMap(map, monster, monster.Type);
                 }
-                
             }
         }
 

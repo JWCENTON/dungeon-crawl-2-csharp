@@ -16,25 +16,17 @@ namespace Dungeon.Fight
                 if (player.Health <= 0 || monster.Health <= 0)
                 {
                     isFightContinues = false;
-                    correctStatusAliveChar(player);
-                    correctStatusAliveMonster(monster, player);
+                    correctStatusAlive(player);
+                    correctStatusAlive(monster);
                 }
             }
         }
 
-        private void correctStatusAliveChar(Character player)
+        private void correctStatusAlive(IHealth arg)
         {
-            if (player.Health <= 0)
+            if (arg.Health <= 0)
             {
-                player.IsAlive = false;
-            }
-        }
-        private void correctStatusAliveMonster(Monster monster, Character player)
-        {
-            if (monster.Health <= 0)
-            {
-                monster.IsAlive = false;
-                player.AtackValue += 10;
+                arg.IsAlive = false;
             }
         }
     }

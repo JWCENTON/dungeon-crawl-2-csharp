@@ -1,5 +1,6 @@
 ﻿using System.Net.NetworkInformation;
 using Dungeon.Maps;
+using Dungeon.Monsters;
 
 namespace Dungeon
 {
@@ -80,6 +81,11 @@ namespace Dungeon
         public static void EndGameWon()
         {
             Console.WriteLine("\n\n\n\tGAME OVER WON\n\n\n");
+        }
+
+        public static void BossStatics(Monster boss)
+        {
+            Console.WriteLine($"\n{boss.Health}");
         }
     }
 }
