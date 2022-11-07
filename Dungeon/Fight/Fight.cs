@@ -1,9 +1,15 @@
-﻿using Dungeon.Monsters;
+﻿using Dungeon.Enum;
+using Dungeon.Monsters;
+using System.Threading;
 
 namespace Dungeon.Fight
 {
     public class Fight
     {
+        public void FightBoss(Character player, Monster monster)
+        {
+            Console.WriteLine("FIGHT") // TODO Boss fight in turns!
+        }
         public void FightWithMonster(Character player, Monster monster)
         {
             var isFightContinues = true;

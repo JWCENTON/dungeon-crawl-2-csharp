@@ -64,8 +64,14 @@ namespace Dungeon
                         if (verify.IsMonsterNearby(player, map))
                         {
                             Monster monster = verify.WhatMonsterIsNearby(map, player.Position);
-                            fight.FightWithMonster(player, monster);
-                            Console.WriteLine("NICE");
+                            if (monster.Type == Status.Boss)
+                            {
+                                fight.FightBoss(player, monster);
+                            }
+                            else
+                            {
+                                fight.FightWithMonster(player, monster);
+                            }
                         }
                         endOfMovement = true;
                     }
