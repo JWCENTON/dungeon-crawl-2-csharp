@@ -8,6 +8,7 @@ namespace Dungeon.Enum
 {
     public enum FightOption
     {
-        attack
+        attack,
+        quitFight
     }
 }

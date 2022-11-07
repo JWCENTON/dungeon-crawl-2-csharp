@@ -13,8 +13,8 @@ namespace Dungeon.Fight
             map.FullMap[44, 44] = new Square(Status.Empty);
             map.FullMap[44, 45] = new Square(Status.Empty);
             map.FullMap[44, 45] = new Square(Status.Empty);
-            Console.Write("FIGHT"); // TODO Boss fight in turns!
-            var a = Console.Read();
+            Console.WriteLine("A for ATTACK or C to quit fight"); // TODO Boss fight in turns!
+            //var a = Console.Read();
             bool endFight = false;
             while (!endFight)
             {
@@ -28,7 +28,8 @@ namespace Dungeon.Fight
                             fightOption = FightOption.attack;
                             Console.WriteLine("YESS ATTACK ");
                             break;
-                        case ConsoleKey C:
+                        case ConsoleKey.C:
+                            endFight = true;
                             break;
                     }
 
