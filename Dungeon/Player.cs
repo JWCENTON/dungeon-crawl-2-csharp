@@ -6,7 +6,7 @@ namespace Dungeon
     {
         public Alice()
         {
-            Position = (49, 49); // 21, 11
+            Position = (21, 11); // 21, 11
             Name = "Alice";
             Health = 90; // 90
             AtackValue = 10;
