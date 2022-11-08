@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<Target Name="Text" AfterTargets="AfterBuild">
+		<Copy SourceFiles="..\Dungeon\Data\shield.txt" DestinationFolder="$(OutDir)" />
+	</Target>
+
 </Project>
