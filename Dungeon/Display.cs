@@ -7,6 +7,16 @@ namespace Dungeon
 {
     public class Display
     {
+        public static void DisplayRow(string row)
+        {
+            Console.WriteLine(row);
+        }
+
+        public static void ClearConsole()
+        {
+            Console.Clear();
+        }
+
         private static void ShowLegend(Character player)
         {
             Console.WriteLine("\tPress E to show equipment ");

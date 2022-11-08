@@ -2,6 +2,7 @@
 using Dungeon.Enum;
 using Dungeon.Maps;
 using Dungeon.Monsters;
+using Dungeon.Menu;
 
 namespace Dungeon
 {
@@ -13,8 +14,7 @@ namespace Dungeon
         {
             Map topFloor = new TopFloor();
             Map groundFloor = new GroundFloor();
-
-            Character player = new Alice();
+            MenuManager managerMenu = new MenuManager();
 
             CharacterManager manager = new CharacterManager();
             var boss = manager.CreateMonster(Status.Boss);
@@ -24,10 +24,25 @@ namespace Dungeon
 
             Simulation simulation = new();
             var play = true;
+
+            PlayMenu();
+            Character player = managerMenu.CreateCharacter();
             while (play)
             {
                 simulation.Move(player.Level == "Top floor" ? topFloor : groundFloor, player, _monsters, manager, boss);
                 play = EndGame.CheckForEndGame(player, (Boss)boss);
+            }
+
+            void PlayMenu()
+            {
+               
+                while (!managerMenu.start)
+                {
+                    Display.ClearConsole();
+                    Display.DisplayRow(Ascii.textMenu);
+                    var key = Console.ReadKey().KeyChar;
+                    managerMenu.Manager(key);
+                }
             }
         }
     }

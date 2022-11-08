@@ -9,8 +9,6 @@ namespace Dungeon
 {
     public class CharacterManager
     {
-        //public List<Monster> Monsters = new();
-
         private readonly List<((int xMin, int yMin), (int xMax, int yMax))> _allowedMonsterPositions = new List<((int, int), (int, int))>
         {
             ((44,23), (49,45)), ((30,23), (33,48))
