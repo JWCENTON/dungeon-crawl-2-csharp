@@ -46,5 +46,19 @@ namespace DungeonNUnitTest
             // assert
             Assert.IsFalse(EndGame.CheckForEndGame(_player, _boss));
         }
+
+        [Test]
+        [TestCase(10)]
+        [TestCase(200)]
+        public void CheckIfBossHeathWhenMoreThenZeroEndsGame(int health)
+        {
+            // arrange
+            _boss.Health = health;
+
+            // act
+
+            // assert
+            Assert.IsTrue(EndGame.CheckForEndGame(_player, _boss));
+        }
     }
 }
