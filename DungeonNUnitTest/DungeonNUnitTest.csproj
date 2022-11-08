@@ -20,4 +20,9 @@
     <ProjectReference Include="..\Dungeon\Dungeon.csproj" />
   </ItemGroup>
 
+
+	<Target Name="Shield" AfterTargets="AfterBuild">
+		<Copy SourceFiles="..\Dungeon\Data\shield.txt" DestinationFolder="$(OutDir)" />
+	</Target>
+
 </Project>
