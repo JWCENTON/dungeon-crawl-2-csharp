@@ -1,5 +1,6 @@
 using Dungeon.Monsters;
 using Dungeon;
+using System.Numerics;
 
 namespace DungeonNUnitTest
 {
@@ -18,21 +19,32 @@ namespace DungeonNUnitTest
         }
 
         [Test]
-        public void CheckForEndGame()
+        [TestCase(0)]
+        [TestCase(-10)]
+        public void CheckIfPLayersHeathWhenZeroOrBelowEndsGame(int health)
         {
+            // arrange
+            _player.Health = health;
+            _boss.Health = health;
 
+            // act
 
-            //if (_player.Health <= 1)
-            //{
-            //    Display.EndGameLost();
-            //    return false;
-            //}
-            //else if (_boss.Health <= 1)
-            //{
-            //    Display.EndGameWon();
-            //    return false;
-            //}
-            //return true;
+            // assert
+            Assert.IsFalse(EndGame.CheckForEndGame(_player, _boss));
+        }
+
+        [Test]
+        [TestCase(0)]
+        [TestCase(-10)]
+        public void CheckIfBossHeathWhenZeroOrBelowEndsGame(int health)
+        {
+            // arrange
+            _boss.Health = health;
+
+            // act
+
+            // assert
+            Assert.IsFalse(EndGame.CheckForEndGame(_player, _boss));
         }
     }
 }
