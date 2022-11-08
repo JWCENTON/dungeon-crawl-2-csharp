@@ -18,19 +18,21 @@ namespace DungeonNUnitTest
         }
 
         [Test]
-        public static bool CheckForEndGame()
+        public void CheckForEndGame()
         {
-            if (_player.Health <= 1)
-            {
-                Display.EndGameLost();
-                return false;
-            }
-            else if (_boss.Health <= 1)
-            {
-                Display.EndGameWon();
-                return false;
-            }
-            return true;
+
+
+            //if (_player.Health <= 1)
+            //{
+            //    Display.EndGameLost();
+            //    return false;
+            //}
+            //else if (_boss.Health <= 1)
+            //{
+            //    Display.EndGameWon();
+            //    return false;
+            //}
+            //return true;
         }
     }
 }
