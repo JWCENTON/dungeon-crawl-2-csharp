@@ -3,6 +3,7 @@ using Dungeon.Enum;
 using Dungeon.Maps;
 using Dungeon.Monsters;
 using Dungeon.Menu;
+using Dungeon.SqlManager;
 
 namespace Dungeon
 {
@@ -15,7 +16,6 @@ namespace Dungeon
             Map topFloor = new TopFloor();
             Map groundFloor = new GroundFloor();
             MenuManager managerMenu = new MenuManager();
-
             CharacterManager manager = new CharacterManager();
             var boss = manager.CreateMonster(Status.Boss);
             _monsters = manager.CreateListOfMonsters(10);
@@ -24,6 +24,10 @@ namespace Dungeon
 
             Simulation simulation = new();
             var play = true;
+
+            var connection = new DungeonDbManager();
+            var monsterDao = new MonsterDao(connection.ConnectionString);
+            monsterDao.Add(boss);
 
             PlayMenu();
             Character player = managerMenu.CreateCharacter();

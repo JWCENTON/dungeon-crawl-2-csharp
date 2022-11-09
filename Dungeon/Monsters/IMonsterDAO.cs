@@ -1,8 +1,8 @@
 ﻿namespace Dungeon.Monsters;
 
-public interface IMonsterDAO
+public interface IMonsterDao
 {
     public void Add(Monster monster);
-
+    public void Remove(Monster monster);
 }
 

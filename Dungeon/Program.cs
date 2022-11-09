@@ -1,4 +1,5 @@
-﻿using Dungeon.SqlManager;
+﻿using Dungeon.Monsters;
+using Dungeon.SqlManager;
 
 namespace Dungeon
 {
@@ -6,9 +7,6 @@ namespace Dungeon
     {
         public static void Main(String[] args)
         {
-            var connection = new DungeonDbManager();
-
-            Console.Read();
             Game game = new Game();
             game.Play();
         }
