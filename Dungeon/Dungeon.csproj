@@ -11,4 +11,9 @@
 		<Copy SourceFiles="..\Dungeon\Data\shield.txt" DestinationFolder="$(OutDir)" />
 	</Target>
 
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+	  <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+	</ItemGroup>
+
 </Project>
