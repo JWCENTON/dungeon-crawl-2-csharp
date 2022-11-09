@@ -2,7 +2,7 @@
 
 namespace Dungeon.Monsters
 {
-    public abstract class Monster : IHealth
+    public abstract class Monster : IHealth, IMonster
     {
         public (int y, int x) Position { get; set; }
         public string Name { get; set; }
