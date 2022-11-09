@@ -6,7 +6,7 @@ namespace Dungeon
     {
         public static void Main(String[] args)
         {
-            var connection = new dungeonDbManager();
+            var connection = new DungeonDbManager();
 
             Console.Read();
             Game game = new Game();

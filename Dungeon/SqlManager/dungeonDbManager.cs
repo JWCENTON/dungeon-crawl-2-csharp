@@ -2,10 +2,10 @@
 using Microsoft.Data.SqlClient;
 namespace Dungeon.SqlManager;
 
-public class dungeonDbManager
+public class DungeonDbManager
 {
     public string ConnectionString => ConfigurationManager.AppSettings["connectionString"];
-    public dungeonDbManager()
+    public DungeonDbManager()
     {
         EnsureConnectionSuccessful();
     }
