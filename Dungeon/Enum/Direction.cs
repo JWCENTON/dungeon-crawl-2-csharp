@@ -8,6 +8,8 @@
         Left,
         Inventory,
         DontMove,
-        Fight
+        Fight,
+        Save,
+        Load
     }
 }

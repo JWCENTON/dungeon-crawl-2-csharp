@@ -19,7 +19,7 @@ namespace Dungeon
 
         private static void ShowLegend(Character player)
         {
-            Console.WriteLine("\tPress E to show equipment ");
+            Console.WriteLine("\tPress E to show equipment | F5 to save the game | F9 to load previously saved state");
         }
         private static void PLayerHealthAndPosition(Character player, Monster boss)
         {

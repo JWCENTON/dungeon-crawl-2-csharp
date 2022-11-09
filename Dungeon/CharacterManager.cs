@@ -57,6 +57,16 @@ namespace Dungeon
                         case ConsoleKey.F:
                             direction = Direction.Fight;
                             break;
+                        case ConsoleKey.F5:
+                            Console.WriteLine("Pressed F5 ");
+                            Console.Read();
+                            direction = Direction.Save;
+                            break;
+                        case ConsoleKey.F9:
+                            Console.WriteLine("Pressed F9 ");
+                            Console.Read();
+                            direction = Direction.Load;
+                            break;
                         default:
                             direction = Direction.DontMove;
                             break;
