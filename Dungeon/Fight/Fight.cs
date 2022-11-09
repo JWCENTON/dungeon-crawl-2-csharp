@@ -54,34 +54,6 @@ namespace Dungeon.Fight
             var shield = new FileReader.FileReader(Path.GetFullPath(Path.Combine(System.AppContext.BaseDirectory, "shield.txt")));
             DisplayFight(shield, player, boss);
             Attack(shield, player, boss);
-            //bool endFight = false;
-            //while (!endFight)
-            //{
-            //    if (Console.KeyAvailable)
-            //    {
-            //        ConsoleKeyInfo key = Console.ReadKey(true);
-            //        switch (key.Key)
-            //        {
-            //            case ConsoleKey.A:
-            //                Console.Clear();
-            //                player.Health -= boss.AtackValue;
-            //                boss.Health -= player.AtackValue;
-            //                boss.AtackValue += 1;
-            //                if (player.Health <= 0 || boss.Health <= 0)
-            //                {
-            //                    endFight = true;
-            //                    correctStatusAlive(player);
-            //                    correctStatusAlive(boss);
-            //                }
-            //                DisplayFight(shield, player, boss);
-            //                break;
-            //            case ConsoleKey.Q:
-            //                endFight = true;
-            //                break;
-            //        }
-
-            //    }
-            //}
         }
 
 
