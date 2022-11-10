@@ -9,7 +9,12 @@ namespace Dungeon
 {
     public class Game
     {
-        private List<Monster> _monsters = new();
+        public List<Monster> _monsters { get; private set; }
+
+        public Game()
+        {
+            _monsters = new List<Monster>();
+        }
 
         public void Play()
         {

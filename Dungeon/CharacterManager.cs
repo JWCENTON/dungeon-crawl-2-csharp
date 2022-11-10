@@ -14,6 +14,16 @@ namespace Dungeon
             ((44,23), (49,45)), ((30,23), (33,48))
         };
 
+        private void SaveGame(Direction direction)
+        {
+            if (direction == Direction.Save)
+            {
+                var game = new Game();
+                var monsterManagerDao = new MonsterManagerDao();
+                monsterManagerDao.ManageMonstersDao(game._monsters);
+            }
+        }
+
         private (int, int) GetMonsterPosition()
         {
             Random random = new Random();
