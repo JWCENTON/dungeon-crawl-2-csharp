@@ -24,10 +24,6 @@ namespace Dungeon
 
             var monsterManagerDao = new MonsterManagerDao();
             monsterManagerDao.ManageMonstersDao(boss);
-            //var monsterDao = new MonsterDao(connection.ConnectionString);
-            //var monsterManager = new DungeonDbManagerDao();
-            //monsterManager.ClearMonstersTable(connection);
-            //monsterDao.Add(boss);
 
             Simulation simulation = new();
             var play = true;
