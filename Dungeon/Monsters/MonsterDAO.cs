@@ -12,15 +12,8 @@ public class MonsterDao : IMonsterDao
     }
     public void Add(Monster monster)
     {
-        var name = "Wolf";
-        var health = "88";
-        var attackValue = "5";
-        var type = "Monster1";
-        var positionX = "22";
-        var positionY = "22";
-
-        const string insertCommand = @"INSERT INTO monstersDAO (name, health, attack, monster_type, positionX, positionY)
-                                                        VALUES (@name, @health, @attack, @monster_type, @positionX, @positionY)
+        const string insertCommand = @"INSERT INTO monsters (name, health, attack, monster_type, positionX, positionY, is_alive)
+                                                        VALUES (@name, @health, @attack, @monster_type, @positionX, @positionY, @is_alive)
                                                         SELECT SCOPE_IDENTITY();";
         try
         {
@@ -34,6 +27,7 @@ public class MonsterDao : IMonsterDao
             cmd.Parameters.AddWithValue("@monster_type", monster.Type);
             cmd.Parameters.AddWithValue("@positionX", monster.Position.x);
             cmd.Parameters.AddWithValue("@positionY", monster.Position.y);
+            cmd.Parameters.AddWithValue("@is_alive", monster.IsAlive);
             cmd.ExecuteNonQuery();
             connection.Close();
         }
