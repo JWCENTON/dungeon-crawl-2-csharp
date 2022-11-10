@@ -14,13 +14,13 @@ namespace Dungeon
             ((44,23), (49,45)), ((30,23), (33,48))
         };
 
-        private void SaveGame(Direction direction)
+        private void SaveGame(Direction direction, List<Monster> monsters)
         {
             if (direction == Direction.Save)
             {
                 
                 var monsterManagerDao = new MonsterManagerDao();
-                monsterManagerDao.ManageMonstersDao(Game._monsters);
+                monsterManagerDao.ManageMonstersDao(monsters);
             }
         }
 
@@ -36,7 +36,7 @@ namespace Dungeon
             return (yCoordinate, xCoordinate);
         }
 
-        internal void GetPlayerMove(Character player, Map map)
+        internal void GetPlayerMove(Character player, Map map, List<Monster> monsters)
         {
             Verification verify = new Verification();
             Fight.Fight fight = new Fight.Fight();
@@ -71,7 +71,7 @@ namespace Dungeon
                             Console.WriteLine("Pressed F5 ");
                             Console.Read();
                             direction = Direction.Save;
-                            SaveGame(direction);
+                            SaveGame(direction, monsters);
                             break;
                         case ConsoleKey.F9:
                             Console.WriteLine("Pressed F9 ");

@@ -14,7 +14,7 @@ namespace Dungeon
             Display.Map(map, player);
             Display.DisplayPlayerDetails(player, boss);
             Equipment.ShowEquipment(player);
-            manager.GetPlayerMove(player, map);
+            manager.GetPlayerMove(player, map, monsters);
             manager.GetBossMove(boss, map);
             player.EatApple();
             Console.WriteLine("\n\n");
