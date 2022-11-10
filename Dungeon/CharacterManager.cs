@@ -18,9 +18,9 @@ namespace Dungeon
         {
             if (direction == Direction.Save)
             {
-                var game = new Game();
+                
                 var monsterManagerDao = new MonsterManagerDao();
-                monsterManagerDao.ManageMonstersDao(game._monsters);
+                monsterManagerDao.ManageMonstersDao(Game._monsters);
             }
         }
 
@@ -71,6 +71,7 @@ namespace Dungeon
                             Console.WriteLine("Pressed F5 ");
                             Console.Read();
                             direction = Direction.Save;
+                            SaveGame(direction);
                             break;
                         case ConsoleKey.F9:
                             Console.WriteLine("Pressed F9 ");

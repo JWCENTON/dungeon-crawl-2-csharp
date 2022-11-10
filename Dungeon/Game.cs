@@ -9,13 +9,8 @@ namespace Dungeon
 {
     public class Game
     {
-        public List<Monster> _monsters { get; private set; }
-
-        public Game()
-        {
-            _monsters = new List<Monster>();
-        }
-
+        public static List<Monster> _monsters = new();
+        
         public void Play()
         {
             Map topFloor = new TopFloor();
