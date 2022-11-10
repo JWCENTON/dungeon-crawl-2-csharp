@@ -23,7 +23,7 @@ namespace Dungeon
             _monsters.Add(boss);
 
             var monsterManagerDao = new MonsterManagerDao();
-            monsterManagerDao.ManageMonstersDao(boss);
+            monsterManagerDao.ManageMonstersDao(_monsters);
 
             Simulation simulation = new();
             var play = true;
